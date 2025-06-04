@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Political Ontology Viewer</title>
   <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+  <script src="https://unpkg.com/cytoscape-fcose/dist/cytoscape-fcose.js"></script>
   <style>
     body { margin: 0; font-family: sans-serif; }
     #toolbar { padding: 10px; background: #f4f4f4; }
@@ -76,15 +77,14 @@
             }
           ],
           layout: {
-            name: 'cose',
+            name: 'fcose',
             animate: true,
             fit: false,
-            padding: 300,
-            nodeRepulsion: 200000,
-            idealEdgeLength: 300,
-            edgeElasticity: 0.1,
-            gravity: 1,
-            numIter: 1000
+            nodeSeparation: 100,
+            idealEdgeLength: 150,
+            nodeRepulsion: 100000,
+            gravity: 1.2,
+            gravityRangeCompound: 1.5
           },
           zoom: 1,
           pan: { x: 0, y: 0 }
