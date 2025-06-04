@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Political Ontology Viewer</title>
   <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/cytoscape-fcose@2.3.0/cytoscape-fcose.min.js"></script>
   <style>
     body { margin: 0; font-family: sans-serif; }
     #toolbar { padding: 10px; background: #f4f4f4; }
@@ -21,8 +20,6 @@
   <div id="cy"></div>
 
   <script>
-    cytoscape.use(window.fcose);
-
     fetch('graph.json')
       .then(res => res.json())
       .then(graphData => {
@@ -79,15 +76,12 @@
             }
           ],
           layout: {
-            name: 'fcose',
+            name: 'cose',
             animate: true,
             fit: true,
             padding: 100,
-            nodeSeparation: 100,
-            idealEdgeLength: 150,
             nodeRepulsion: 100000,
-            gravity: 1.2,
-            gravityRangeCompound: 1.5
+            idealEdgeLength: 150
           }
         });
 
