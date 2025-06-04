@@ -78,11 +78,16 @@
           layout: {
             name: 'cose',
             animate: true,
-            fit: true,
-            padding: 300, // increase spacing
-            nodeRepulsion: 100000, // larger node repulsion for more spread
-            idealEdgeLength: 300 // longer edges
-          }
+            fit: false,
+            padding: 300,
+            nodeRepulsion: 200000,
+            idealEdgeLength: 300,
+            edgeElasticity: 0.1,
+            gravity: 1,
+            numIter: 1000
+          },
+          zoom: 1,
+          pan: { x: 0, y: 0 }
         });
 
         // Focus on node when clicked
@@ -115,10 +120,12 @@
         }
 
         // Auto-focus on default node
-        const defaultNode = cy.getElementById('individual_0');
-        if (defaultNode && defaultNode.length > 0) {
-          setTimeout(() => highlightNode(defaultNode), 500);
-        }
+        cy.ready(() => {
+          const defaultNode = cy.getElementById('individual_0');
+          if (defaultNode && defaultNode.length > 0) {
+            highlightNode(defaultNode);
+          }
+        });
       });
   </script>
 </body>
