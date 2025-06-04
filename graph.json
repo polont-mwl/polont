@@ -1,0 +1,16 @@
+{
+  "nodes": [
+    { "data": { "id": "john_smith", "label": "John Smith", "type": "Individual" } },
+    { "data": { "id": "trump_2020", "label": "Trump Campaign", "type": "Campaign" } }
+  ],
+  "edges": [
+    {
+      "data": {
+        "source": "john_smith",
+        "target": "trump_2020",
+        "label": "Donated",
+        "attributes": { "amount": 250, "date": "2020-09-01" }
+      }
+    }
+  ]
+}
