@@ -79,7 +79,9 @@
             name: 'cose',
             animate: true,
             fit: true,
-            padding: 30
+            padding: 300, // increase spacing
+            nodeRepulsion: 100000, // larger node repulsion for more spread
+            idealEdgeLength: 300 // longer edges
           }
         });
 
@@ -100,7 +102,7 @@
 
         window.resetView = function() {
           cy.elements().removeClass('faded');
-          cy.animate({ fit: { eles: cy.elements(), padding: 50 }, duration: 500 });
+          cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
         }
 
         function highlightNode(node) {
@@ -110,6 +112,12 @@
           node.connectedEdges().removeClass('faded');
           node.connectedEdges().connectedNodes().removeClass('faded');
           cy.animate({ center: { eles: node }, zoom: 2, duration: 500 });
+        }
+
+        // Auto-focus on default node
+        const defaultNode = cy.getElementById('individual_0');
+        if (defaultNode && defaultNode.length > 0) {
+          setTimeout(() => highlightNode(defaultNode), 500);
         }
       });
   </script>
