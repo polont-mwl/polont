@@ -1,64 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Political Ontology Graph</title>
   <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; }
-    #cy { width: 100vw; height: 100vh; display: block; }
+    body { margin: 0; font-family: sans-serif; }
+    #cy { width: 100vw; height: 100vh; }
   </style>
 </head>
 <body>
   <div id="cy"></div>
+
   <script>
-    const cy = cytoscape({
-      container: document.getElementById('cy'),
-      elements: {
-        nodes: [
-          { data: { id: 'john', label: 'John Smith', type: 'Individual' } },
-          { data: { id: 'trump2020', label: 'Trump Campaign', type: 'Campaign' } }
-        ],
-        edges: [
-          { data: { source: 'john', target: 'trump2020', label: 'Donated', amount: 250 } }
-        ]
-      },
-      style: [
-        {
-          selector: 'node',
-          style: {
-            'label': 'data(label)',
-            'background-color': ele => {
-              const type = ele.data('type');
-              if (type === 'Individual') return '#1f77b4';
-              if (type === 'Campaign') return '#d62728';
-              return '#888';
+    fetch('graph.json')
+      .then(res => res.json())
+      .then(data => {
+        const cy = cytoscape({
+          container: document.getElementById('cy'),
+          elements: data,
+          style: [
+            {
+              selector: 'node',
+              style: {
+                'label': 'data(label)',
+                'background-color': ele => {
+                  const type = ele.data('type');
+                  if (type === 'Individual') return '#1f77b4';
+                  if (type === 'Campaign') return '#d62728';
+                  if (type === 'Institution') return '#2ca02c';
+                  return '#777';
+                },
+                'color': '#fff',
+                'text-outline-width': 1,
+                'text-outline-color': '#000',
+                'text-valign': 'center'
+              }
             },
-            'text-valign': 'center',
-            'color': '#fff',
-            'text-outline-width': 2,
-            'text-outline-color': '#000'
-          }
-        },
-        {
-          selector: 'edge',
-          style: {
-            'label': 'data(label)',
-            'curve-style': 'bezier',
-            'target-arrow-shape': 'triangle',
-            'line-color': '#aaa',
-            'target-arrow-color': '#aaa',
-            'text-rotation': 'autorotate',
-            'font-size': 12,
-            'text-margin-y': -10
-          }
-        }
-      ],
-      layout: {
-        name: 'cose',
-        animate: true
-      }
-    });
+            {
+              selector: 'edge',
+              style: {
+                'label': 'data(label)',
+                'curve-style': 'bezier',
+                'target-arrow-shape': 'triangle',
+                'line-color': '#aaa',
+                'target-arrow-color': '#aaa',
+                'font-size': 12,
+                'text-rotation': 'autorotate',
+                'text-margin-y': -10
+              }
+            }
+          ],
+          layout: { name: 'cose', animate: true }
+        });
+      })
+      .catch(err => console.error('Failed to load graph.json:', err));
   </script>
 </body>
 </html>
