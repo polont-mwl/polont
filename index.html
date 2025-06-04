@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Political Ontology Graph</title>
+  <title>Political Ontology Viewer</title>
   <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
   <style>
     body { margin: 0; font-family: sans-serif; }
-    #cy { width: 100vw; height: 100vh; }
+    #toolbar { padding: 10px; background: #f4f4f4; }
+    #cy { width: 100vw; height: 90vh; border-top: 1px solid #ccc; }
+    input, button { font-size: 16px; padding: 4px 8px; margin-right: 5px; }
   </style>
 </head>
 <body>
+  <div id="toolbar">
+    <input type="text" id="nodeSearch" placeholder="Enter node ID">
+    <button onclick="focusOnNode(document.getElementById('nodeSearch').value)">Focus</button>
+    <button onclick="resetView()">Reset View</button>
+  </div>
   <div id="cy"></div>
 
   <script>
@@ -26,15 +33,17 @@
                 'label': 'data(label)',
                 'background-color': ele => {
                   const type = ele.data('type');
-                  if (type === 'Individual') return '#1f77b4';
-                  if (type === 'Campaign') return '#d62728';
-                  if (type === 'Group') return '#9467bd';
-                  if (type === 'Institution') return '#2ca02c';
-                  if (type === 'Policy') return '#ff7f0e';
-                  if (type === 'Event') return '#8c564b';
-                  if (type === 'Media') return '#17becf';
-                  if (type === 'Place') return '#7f7f7f';
-                  return '#ccc';
+                  const colors = {
+                    Individual: '#1f77b4',
+                    Campaign: '#d62728',
+                    Group: '#9467bd',
+                    Institution: '#2ca02c',
+                    Policy: '#ff7f0e',
+                    Event: '#8c564b',
+                    Media: '#17becf',
+                    Place: '#7f7f7f'
+                  };
+                  return colors[type] || '#ccc';
                 },
                 'text-valign': 'center',
                 'text-halign': 'center',
@@ -57,6 +66,13 @@
                 'text-rotation': 'autorotate',
                 'text-margin-y': -8
               }
+            },
+            {
+              selector: '.faded',
+              style: {
+                'opacity': 0.1,
+                'text-opacity': 0.05
+              }
             }
           ],
           layout: {
@@ -66,9 +82,35 @@
             padding: 30
           }
         });
-      })
-      .catch(err => {
-        console.error("Failed to load graph.json", err);
+
+        // Focus on node when clicked
+        cy.on('tap', 'node', function(evt) {
+          const node = evt.target;
+          highlightNode(node);
+        });
+
+        window.focusOnNode = function(id) {
+          const node = cy.getElementById(id);
+          if (node && node.length > 0) {
+            highlightNode(node);
+          } else {
+            alert('Node not found');
+          }
+        }
+
+        window.resetView = function() {
+          cy.elements().removeClass('faded');
+          cy.animate({ fit: { eles: cy.elements(), padding: 50 }, duration: 500 });
+        }
+
+        function highlightNode(node) {
+          cy.elements().removeClass('faded');
+          cy.elements().addClass('faded');
+          node.removeClass('faded');
+          node.connectedEdges().removeClass('faded');
+          node.connectedEdges().connectedNodes().removeClass('faded');
+          cy.animate({ center: { eles: node }, zoom: 2, duration: 500 });
+        }
       });
   </script>
 </body>
