@@ -15,10 +15,10 @@
   <script>
     fetch('graph.json')
       .then(res => res.json())
-      .then(data => {
+      .then(graphData => {
         const cy = cytoscape({
           container: document.getElementById('cy'),
-          elements: data,
+          elements: [...graphData.nodes, ...graphData.edges],
           style: [
             {
               selector: 'node',
@@ -28,13 +28,21 @@
                   const type = ele.data('type');
                   if (type === 'Individual') return '#1f77b4';
                   if (type === 'Campaign') return '#d62728';
+                  if (type === 'Group') return '#9467bd';
                   if (type === 'Institution') return '#2ca02c';
-                  return '#777';
+                  if (type === 'Policy') return '#ff7f0e';
+                  if (type === 'Event') return '#8c564b';
+                  if (type === 'Media') return '#17becf';
+                  if (type === 'Place') return '#7f7f7f';
+                  return '#ccc';
                 },
+                'text-valign': 'center',
+                'text-halign': 'center',
                 'color': '#fff',
                 'text-outline-width': 1,
                 'text-outline-color': '#000',
-                'text-valign': 'center'
+                'width': 40,
+                'height': 40
               }
             },
             {
@@ -45,16 +53,23 @@
                 'target-arrow-shape': 'triangle',
                 'line-color': '#aaa',
                 'target-arrow-color': '#aaa',
-                'font-size': 12,
+                'font-size': 10,
                 'text-rotation': 'autorotate',
-                'text-margin-y': -10
+                'text-margin-y': -8
               }
             }
           ],
-          layout: { name: 'cose', animate: true }
+          layout: {
+            name: 'cose',
+            animate: true,
+            fit: true,
+            padding: 30
+          }
         });
       })
-      .catch(err => console.error('Failed to load graph.json:', err));
+      .catch(err => {
+        console.error("Failed to load graph.json", err);
+      });
   </script>
 </body>
 </html>
