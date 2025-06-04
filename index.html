@@ -80,9 +80,12 @@
             animate: true,
             fit: true,
             padding: 100,
-            nodeRepulsion: 100000,
-            idealEdgeLength: 150
-          }
+            nodeRepulsion: 200000,
+            idealEdgeLength: 150,
+            gravity: 0.25
+          },
+          minZoom: 0.2,
+          maxZoom: 3
         });
 
         // Focus on node when clicked
