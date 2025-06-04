@@ -1,16 +1,34 @@
 {
   "nodes": [
     { "data": { "id": "john_smith", "label": "John Smith", "type": "Individual" } },
-    { "data": { "id": "trump_2020", "label": "Trump Campaign", "type": "Campaign" } }
+    { "data": { "id": "alice_jones", "label": "Alice Jones", "type": "Individual" } },
+    { "data": { "id": "trump_2020", "label": "Trump Campaign", "type": "Campaign", "attributes": { "year": 2020 } } },
+    { "data": { "id": "biden_2024", "label": "Biden Campaign", "type": "Campaign", "attributes": { "year": 2024 } } },
+    { "data": { "id": "nra", "label": "NRA", "type": "Group" } },
+    { "data": { "id": "aclu", "label": "ACLU", "type": "Group" } },
+    { "data": { "id": "cnn", "label": "CNN", "type": "Institution" } },
+    { "data": { "id": "scotus", "label": "Supreme Court", "type": "Institution" } },
+    { "data": { "id": "green_new_deal", "label": "Green New Deal", "type": "Policy" } },
+    { "data": { "id": "tax_reform", "label": "Tax Reform Act", "type": "Policy" } },
+    { "data": { "id": "jan6", "label": "Jan 6 Capitol Riot", "type": "Event" } },
+    { "data": { "id": "iowa_caucus", "label": "Iowa Caucus 2024", "type": "Event" } },
+    { "data": { "id": "nyt_article", "label": "NYT Article", "type": "Media" } },
+    { "data": { "id": "capitol", "label": "Capitol Building", "type": "Place" } },
+    { "data": { "id": "colorado", "label": "Colorado", "type": "Place" } }
   ],
   "edges": [
-    {
-      "data": {
-        "source": "john_smith",
-        "target": "trump_2020",
-        "label": "Donated",
-        "attributes": { "amount": 250, "date": "2020-09-01" }
-      }
-    }
+    { "data": { "source": "john_smith", "target": "trump_2020", "label": "Donated", "attributes": { "amount": 250, "date": "2020-09-01" } } },
+    { "data": { "source": "alice_jones", "target": "biden_2024", "label": "Donated", "attributes": { "amount": 500, "date": "2023-08-15" } } },
+    { "data": { "source": "john_smith", "target": "nra", "label": "Member of" } },
+    { "data": { "source": "alice_jones", "target": "aclu", "label": "Member of" } },
+    { "data": { "source": "alice_jones", "target": "cnn", "label": "Works for" } },
+    { "data": { "source": "nra", "target": "trump_2020", "label": "Endorsed" } },
+    { "data": { "source": "aclu", "target": "green_new_deal", "label": "Supports" } },
+    { "data": { "source": "nra", "target": "green_new_deal", "label": "Opposes" } },
+    { "data": { "source": "scotus", "target": "tax_reform", "label": "Enacted", "attributes": { "date": "2022-07-01" } } },
+    { "data": { "source": "jan6", "target": "capitol", "label": "Occurred in" } },
+    { "data": { "source": "iowa_caucus", "target": "colorado", "label": "Occurred in" } },
+    { "data": { "source": "nyt_article", "target": "jan6", "label": "Covered" } },
+    { "data": { "source": "john_smith", "target": "jan6", "label": "Attended" } }
   ]
 }
