@@ -131,7 +131,7 @@
 
           const ring1 = cy.collection();
           const ring2 = cy.collection();
-          const ring3 = cy.collection();
+          let ring3 = cy.collection();
 
           cy.nodes().forEach(n => {
             if (n.id() === nodeId) return;
@@ -224,7 +224,7 @@
             });
           });
 
-          const ring3Array = ring3.toArray();
+          const ring3Array = ring3.filter(node => node.visible()).toArray();
           const ring2Ids = new Set(ring2.map(n => n.id()));
 
           const ring3Grouped = ring3Array.map(node => {
