@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Political Ontology Viewer</title>
@@ -23,9 +22,7 @@
       <option value="1">1</option>
     </select>
   </div>
-  <div id="cy"></div>
-
-  <script>
+  <div id="cy"></div>  <script>
     let cy, currentNodeId, ring1, ring2, ring3, visibleRing3;
     let radius1 = 200, radius2 = 500, radius3 = 800;
 
@@ -109,6 +106,7 @@
       });
 
       ring1.removeClass('faded');
+if (depth === 1) ring2.addClass('hidden');
       if (depth >= 2) ring2.removeClass('faded');
 
       visibleRing3 = ring3.filter(n => {
@@ -298,6 +296,5 @@ cy.ready(() => {
           }
         });
       });
-  </script>
-</body>
+  </script></body>
 </html>
