@@ -211,6 +211,14 @@ if (depth === 1) ring2.addClass('hidden');
       cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
     }
 
+    function resetView() {
+      if (!cy) return;
+      const defaultNode = cy.getElementById('individual_0');
+      if (defaultNode && defaultNode.length > 0) {
+        highlightNode(defaultNode);
+      }
+    }
+
     fetch('graph.json')
       .then(res => res.json())
       .then(graphData => {
