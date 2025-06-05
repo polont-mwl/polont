@@ -167,56 +167,52 @@
             ele.position({
               x: center.x + radius1 * Math.cos(angle),
               y: center.y + radius1 * Math.sin(angle)
-            
+            });
+          });
 
           const ring2Array = ring2.toArray();
-const ring1Ids = new Set(ring1.map(n => n.id()));
+          const ring1Ids = new Set(ring1.map(n => n.id()));
 
-const ring2Grouped = ring2Array.map(node => {
-  const connections = cy.edges().filter(e =>
-    (ring1Ids.has(e.source().id()) && e.target().id() === node.id()) ||
-    (ring1Ids.has(e.target().id()) && e.source().id() === node.id())
-  ).map(e => ring1Ids.has(e.source().id()) ? e.source().id() : e.target().id());
+          const ring2Grouped = ring2Array.map(node => {
+            const connections = cy.edges().filter(e =>
+              (ring1Ids.has(e.source().id()) && e.target().id() === node.id()) ||
+              (ring1Ids.has(e.target().id()) && e.source().id() === node.id())
+            ).map(e => ring1Ids.has(e.source().id()) ? e.source().id() : e.target().id());
 
-  const key = connections.sort().join(',');
-  return { node, key, primary: connections[0] || '' };
-});
+            const key = connections.sort().join(',');
+            return { node, key, primary: connections[0] || '' };
+          });
 
-ring2Grouped.sort((a, b) => {
-  if (a.primary < b.primary) return -1;
-  if (a.primary > b.primary) return 1;
-  return a.key.localeCompare(b.key);
-});
+          ring2Grouped.sort((a, b) => {
+            if (a.primary < b.primary) return -1;
+            if (a.primary > b.primary) return 1;
+            return a.key.localeCompare(b.key);
+          });
 
-const ring2Sorted = ring2Grouped.map(item => item.node);
+          const ring2Sorted = ring2Grouped.map(item => item.node);
 
-          // Group ring2 nodes by primary ID
-const ring2GroupsByPrimary = {};
-ring2Grouped.forEach(item => {
-  const key = item.primary;
-  if (!ring2GroupsByPrimary[key]) ring2GroupsByPrimary[key] = [];
-  ring2GroupsByPrimary[key].push(item.node);
-});
+          const ring2GroupsByPrimary = {};
+          ring2Grouped.forEach(item => {
+            const key = item.primary;
+            if (!ring2GroupsByPrimary[key]) ring2GroupsByPrimary[key] = [];
+            ring2GroupsByPrimary[key].push(item.node);
+          });
 
-// Layout ring2 nodes in clusters near their primary
-Object.entries(ring2GroupsByPrimary).forEach(([primaryId, nodes]) => {
-  const primary = cy.getElementById(primaryId);
-  if (!primary || !primary.position) return;
-  const px = primary.position().x;
-  const py = primary.position().y;
-  const angle = Math.atan2(py - center.y, px - center.x);
-  const offset = (Math.PI / 180) * 10;
+          Object.entries(ring2GroupsByPrimary).forEach(([primaryId, nodes]) => {
+            const primary = cy.getElementById(primaryId);
+            if (!primary || !primary.position) return;
+            const px = primary.position().x;
+            const py = primary.position().y;
+            const angle = Math.atan2(py - center.y, px - center.x);
+            const offset = (Math.PI / 180) * 10;
 
-  nodes.forEach((node, i) => {
-    const theta = angle + offset * (i - (nodes.length - 1) / 2);
-    node.position({
-      x: center.x + radius2 * Math.cos(theta),
-      y: center.y + radius2 * Math.sin(theta)
-    });
-  });
-});
-});
-});
+            nodes.forEach((node, i) => {
+              const theta = angle + offset * (i - (nodes.length - 1) / 2);
+              node.position({
+                x: center.x + radius2 * Math.cos(theta),
+                y: center.y + radius2 * Math.sin(theta)
+              });
+            });
           });
 
           const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
