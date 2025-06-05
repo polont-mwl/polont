@@ -170,9 +170,15 @@
           cy.edges().forEach(edge => {
             const src = edge.source();
             const tgt = edge.target();
+
+            const srcId = src.id();
+            const tgtId = tgt.id();
+            const isInRing3 = ring3.has(src) && ring3.has(tgt);
+
             if (
-              (src.id() === nodeId || ring1.has(src) || ring2.has(src) || visibleRing3.has(src)) &&
-              (tgt.id() === nodeId || ring1.has(tgt) || ring2.has(tgt) || visibleRing3.has(tgt))
+              !isInRing3 &&
+              (srcId === nodeId || ring1.has(src) || ring2.has(src) || visibleRing3.has(src)) &&
+              (tgtId === nodeId || ring1.has(tgt) || ring2.has(tgt) || visibleRing3.has(tgt))
             ) {
               edge.removeClass('hidden faded');
             }
