@@ -11,7 +11,6 @@ GRAPH_JSON_PATH = 'graph.json'  # Adjust this path as needed
 base_params = {
     'api_key': API_KEY,
     'contributor_state': 'CO',
-    'contributor_employer': 'Jeffco',
     'two_year_transaction_period': 2024,
     'per_page': 1000
 }
@@ -33,6 +32,7 @@ more_pages = True
 while more_pages:
     params = base_params.copy()
     params['page'] = page
+    print(f"Requesting: {FEC_ENDPOINT}?" + "&".join([f"{k}={v}" for k, v in params.items()]))
     response = requests.get(FEC_ENDPOINT, params=params)
     data = response.json()
 
