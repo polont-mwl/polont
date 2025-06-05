@@ -183,13 +183,14 @@
 
             const isSecondToThird = (ring2.has(src) && visibleRing3.has(tgt)) ||
                                      (visibleRing3.has(src) && ring2.has(tgt));
+            const isSecondToSecond = ring2.has(src) && ring2.has(tgt);
 
             if (!isInRing3 &&
                 (srcId === nodeId || ring1.has(src) || ring2.has(src) || visibleRing3.has(src)) &&
                 (tgtId === nodeId || ring1.has(tgt) || ring2.has(tgt) || visibleRing3.has(tgt))) {
 
               edge.removeClass('hidden faded faded-third');
-              if (isSecondToThird) edge.addClass('faded-third');
+              if (isSecondToThird || isSecondToSecond) edge.addClass('faded-third');
             }
           });
 
