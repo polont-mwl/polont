@@ -7,7 +7,7 @@
     body { margin: 0; font-family: sans-serif; }
     #toolbar { padding: 10px; background: #f4f4f4; }
     #cy { width: 100vw; height: 90vh; border-top: 1px solid #ccc; }
-    input, button { font-size: 16px; padding: 4px 8px; margin-right: 5px; }
+    input, button, select { font-size: 16px; padding: 4px 8px; margin-right: 5px; }
   </style>
 </head>
 <body>
@@ -15,12 +15,191 @@
     <input type="text" id="nodeSearch" placeholder="Enter node ID">
     <button onclick="focusOnNode(document.getElementById('nodeSearch').value)">Focus</button>
     <button onclick="resetView()">Reset View</button>
+    <label for="depth">Depth:</label>
+    <select id="depth" onchange="updateDepth()">
+      <option value="3" selected>3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select>
   </div>
   <div id="cy"></div>  <script>
+    let cy, currentNode, ring1, ring2, ring3, visibleRing3;
+    let radius1 = 200, radius2 = 500, radius3 = 800;
+
+    function getBestPrimary(node, primaryIds) {
+      const scoreMap = {};
+      node.connectedEdges().forEach(edge => {
+        const source = edge.source().id();
+        const target = edge.target().id();
+        const neighbor = source === node.id() ? target : source;
+        if (primaryIds.has(neighbor)) {
+          scoreMap[neighbor] = (scoreMap[neighbor] || 0) + 1;
+        }
+      });
+      return Object.entries(scoreMap).sort((a, b) => b[1] - a[1])[0]?.[0] || '';
+    }
+
+    function updateDepth() {
+      if (currentNode) highlightNode(currentNode);
+    }
+
+    function highlightNode(node) {
+      currentNode = node;
+      const depth = parseInt(document.getElementById('depth').value);
+
+      cy.elements().removeClass('faded hidden faded-third');
+      cy.elements().addClass('faded');
+
+      const center = { x: 0, y: 0 };
+      node.position(center);
+      node.removeClass('faded');
+
+      const nodeId = node.id();
+      const directNeighbors = new Set();
+      const secondDegree = new Set();
+
+      cy.edges().forEach(edge => {
+        const src = edge.source().id();
+        const tgt = edge.target().id();
+        if (src === nodeId) directNeighbors.add(tgt);
+        if (tgt === nodeId) directNeighbors.add(src);
+      });
+
+      cy.nodes().forEach(n => {
+        const nid = n.id();
+        if (nid === nodeId || directNeighbors.has(nid)) return;
+        for (const dn of directNeighbors) {
+          if (cy.getElementById(dn).edgesWith(n).length > 0) {
+            secondDegree.add(nid);
+            break;
+          }
+        }
+      });
+
+      ring1 = cy.collection();
+      ring2 = cy.collection();
+      ring3 = cy.collection();
+
+      cy.nodes().forEach(n => {
+        if (n.id() === nodeId) return;
+        if (directNeighbors.has(n.id())) {
+          ring1.merge(n);
+        } else if (secondDegree.has(n.id())) {
+          ring2.merge(n);
+        } else {
+          ring3.merge(n);
+        }
+      });
+
+      ring1.removeClass('faded');
+      if (depth >= 2) ring2.removeClass('faded');
+
+      visibleRing3 = ring3.filter(n => {
+        const connectedToRing2 = n.connectedEdges().some(edge =>
+          (ring2.has(edge.source()) && ring3.has(edge.target())) ||
+          (ring3.has(edge.source()) && ring2.has(edge.target()))
+        );
+        if (connectedToRing2 && depth === 3) {
+          n.removeClass('faded');
+          return true;
+        } else {
+          n.removeClass('faded').addClass('hidden');
+          return false;
+        }
+      });
+
+      cy.edges().addClass('hidden');
+      cy.edges().forEach(edge => {
+        const src = edge.source();
+        const tgt = edge.target();
+
+        const srcId = src.id();
+        const tgtId = tgt.id();
+        const isInRing3 = ring3.has(src) && ring3.has(tgt);
+        const isSecondToThird = (ring2.has(src) && visibleRing3.has(tgt)) || (visibleRing3.has(src) && ring2.has(tgt));
+        const isSecondToSecond = ring2.has(src) && ring2.has(tgt);
+
+        if (!isInRing3 &&
+          (srcId === nodeId || ring1.has(src) || ring2.has(src) || visibleRing3.has(src)) &&
+          (tgtId === nodeId || ring1.has(tgt) || ring2.has(tgt) || visibleRing3.has(tgt))) {
+
+          edge.removeClass('hidden faded faded-third');
+          if (isSecondToThird || isSecondToSecond) edge.addClass('faded-third');
+          if (depth < 3 && (isSecondToThird || visibleRing3.has(src) || visibleRing3.has(tgt))) edge.addClass('hidden');
+          if (depth < 2 && (ring2.has(src) || ring2.has(tgt))) edge.addClass('hidden');
+        }
+      });
+
+      const ring1Ids = new Set(ring1.map(n => n.id()));
+      const ring2GroupsByPrimary = {};
+      ring2.forEach(node => {
+        const best = getBestPrimary(node, ring1Ids);
+        if (!ring2GroupsByPrimary[best]) ring2GroupsByPrimary[best] = [];
+        ring2GroupsByPrimary[best].push(node);
+      });
+
+      const primaryCounts = Object.entries(ring2GroupsByPrimary).map(([id, nodes]) => ({ id, count: nodes.length }));
+      primaryCounts.sort((a, b) => b.count - a.count);
+
+      const total2 = primaryCounts.reduce((sum, p) => sum + p.count, 0);
+      let usedAngle = 0;
+      const anchorAngles = {};
+
+      primaryCounts.forEach(({ id: primaryId, count }) => {
+        const angleSpan = (2 * Math.PI) * (count / total2);
+        const baseAngle = usedAngle;
+        usedAngle += angleSpan;
+
+        const primary = cy.getElementById(primaryId);
+        const midAngle = baseAngle + angleSpan / 2;
+        anchorAngles[primaryId] = midAngle;
+        primary.position({
+          x: center.x + radius1 * Math.cos(midAngle),
+          y: center.y + radius1 * Math.sin(midAngle)
+        });
+
+        const groupNodes = ring2GroupsByPrimary[primaryId] || [];
+        groupNodes.forEach((node, i) => {
+          const theta = baseAngle + (angleSpan / groupNodes.length) * i;
+          node.position({
+            x: center.x + radius2 * Math.cos(theta),
+            y: center.y + radius2 * Math.sin(theta)
+          });
+          anchorAngles[node.id()] = theta;
+        });
+      });
+
+      const ring2Ids = new Set(ring2.map(n => n.id()));
+      const ring3GroupsByPrimary = {};
+
+      visibleRing3.forEach(node => {
+        const best = getBestPrimary(node, ring2Ids);
+        if (!ring3GroupsByPrimary[best]) ring3GroupsByPrimary[best] = [];
+        ring3GroupsByPrimary[best].push(node);
+      });
+
+      Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
+        const anchorAngle = anchorAngles[primaryId] || 0;
+        const spread = Math.PI / 24;
+        const startAngle = anchorAngle - (spread / 2);
+
+        nodes.forEach((node, i) => {
+          const theta = startAngle + (spread / Math.max(nodes.length - 1, 1)) * i;
+          node.position({
+            x: center.x + radius3 * Math.cos(theta),
+            y: center.y + radius3 * Math.sin(theta)
+          });
+        });
+      });
+
+      cy.layout({ name: 'preset' }).run();
+      cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
+    }
+
     fetch('graph.json')
       .then(res => res.json())
       .then(graphData => {
-        const cy = cytoscape({
+        cy = cytoscape({
           container: document.getElementById('cy'),
           elements: [...graphData.nodes, ...graphData.edges],
           style: [
@@ -89,194 +268,6 @@
           minZoom: 0.2,
           maxZoom: 3
         });
-
-        cy.on('tap', 'node', function(evt) {
-          const node = evt.target;
-          highlightNode(node);
-        });
-
-        window.focusOnNode = function(id) {
-          const node = cy.getElementById(id);
-          if (node && node.length > 0) {
-            highlightNode(node);
-          } else {
-            alert('Node not found');
-          }
-        }
-
-        window.resetView = function() {
-          cy.elements().removeClass('faded hidden faded-third');
-          cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
-        }
-
-        function getBestPrimary(node, primaryIds) {
-          const scoreMap = {};
-          node.connectedEdges().forEach(edge => {
-            const source = edge.source().id();
-            const target = edge.target().id();
-            const neighbor = source === node.id() ? target : source;
-            if (primaryIds.has(neighbor)) {
-              scoreMap[neighbor] = (scoreMap[neighbor] || 0) + 1;
-            }
-          });
-          return Object.entries(scoreMap).sort((a, b) => b[1] - a[1])[0]?.[0] || '';
-        }
-
-        function highlightNode(node) {
-          cy.elements().removeClass('faded hidden faded-third');
-          cy.elements().addClass('faded');
-
-          const center = { x: 0, y: 0 };
-          node.position(center);
-          node.removeClass('faded');
-
-          const nodeId = node.id();
-          const directNeighbors = new Set();
-          const secondDegree = new Set();
-
-          cy.edges().forEach(edge => {
-            const src = edge.source().id();
-            const tgt = edge.target().id();
-            if (src === nodeId) directNeighbors.add(tgt);
-            if (tgt === nodeId) directNeighbors.add(src);
-          });
-
-          cy.nodes().forEach(n => {
-            const nid = n.id();
-            if (nid === nodeId || directNeighbors.has(nid)) return;
-            for (const dn of directNeighbors) {
-              if (cy.getElementById(dn).edgesWith(n).length > 0) {
-                secondDegree.add(nid);
-                break;
-              }
-            }
-          });
-
-          const ring1 = cy.collection();
-          const ring2 = cy.collection();
-          const ring3 = cy.collection();
-
-          cy.nodes().forEach(n => {
-            if (n.id() === nodeId) return;
-            if (directNeighbors.has(n.id())) {
-              ring1.merge(n);
-            } else if (secondDegree.has(n.id())) {
-              ring2.merge(n);
-            } else {
-              ring3.merge(n);
-            }
-          });
-
-          ring1.removeClass('faded');
-          ring2.removeClass('faded');
-
-          const visibleRing3 = ring3.filter(n => {
-            const connectedToRing2 = n.connectedEdges().some(edge =>
-              (ring2.has(edge.source()) && ring3.has(edge.target())) ||
-              (ring3.has(edge.source()) && ring2.has(edge.target()))
-            );
-            if (connectedToRing2) {
-              n.removeClass('faded');
-              return true;
-            } else {
-              n.removeClass('faded').addClass('hidden');
-              return false;
-            }
-          });
-
-          cy.edges().addClass('hidden');
-
-          cy.edges().forEach(edge => {
-            const src = edge.source();
-            const tgt = edge.target();
-
-            const srcId = src.id();
-            const tgtId = tgt.id();
-            const isInRing3 = ring3.has(src) && ring3.has(tgt);
-
-            const isSecondToThird = (ring2.has(src) && visibleRing3.has(tgt)) ||
-                                     (visibleRing3.has(src) && ring2.has(tgt));
-            const isSecondToSecond = ring2.has(src) && ring2.has(tgt);
-
-            if (!isInRing3 &&
-                (srcId === nodeId || ring1.has(src) || ring2.has(src) || visibleRing3.has(src)) &&
-                (tgtId === nodeId || ring1.has(tgt) || ring2.has(tgt) || visibleRing3.has(tgt))) {
-
-              edge.removeClass('hidden faded faded-third');
-              if (isSecondToThird || isSecondToSecond) edge.addClass('faded-third');
-            }
-          });
-
-          const radius1 = 200;
-          const radius2 = 500;
-          const radius3 = 800;
-
-          const ring1Ids = new Set(ring1.map(n => n.id()));
-
-          const ring2GroupsByPrimary = {};
-          ring2.forEach(node => {
-            const best = getBestPrimary(node, ring1Ids);
-            if (!ring2GroupsByPrimary[best]) ring2GroupsByPrimary[best] = [];
-            ring2GroupsByPrimary[best].push(node);
-          });
-
-          const primaryCounts = Object.entries(ring2GroupsByPrimary).map(([id, nodes]) => ({ id, count: nodes.length }));
-          primaryCounts.sort((a, b) => b.count - a.count);
-
-          const total2 = primaryCounts.reduce((sum, p) => sum + p.count, 0);
-          let usedAngle = 0;
-          const anchorAngles = {};
-
-          primaryCounts.forEach(({ id: primaryId, count }) => {
-            const angleSpan = (2 * Math.PI) * (count / total2);
-            const baseAngle = usedAngle;
-            usedAngle += angleSpan;
-
-            const primary = cy.getElementById(primaryId);
-            const midAngle = baseAngle + angleSpan / 2;
-            anchorAngles[primaryId] = midAngle;
-            primary.position({
-              x: center.x + radius1 * Math.cos(midAngle),
-              y: center.y + radius1 * Math.sin(midAngle)
-            });
-
-            const groupNodes = ring2GroupsByPrimary[primaryId] || [];
-            groupNodes.forEach((node, i) => {
-              const theta = baseAngle + (angleSpan / groupNodes.length) * i;
-              node.position({
-                x: center.x + radius2 * Math.cos(theta),
-                y: center.y + radius2 * Math.sin(theta)
-              });
-              anchorAngles[node.id()] = theta;
-            });
-          });
-
-          const ring2Ids = new Set(ring2.map(n => n.id()));
-          const ring3GroupsByPrimary = {};
-
-          visibleRing3.forEach(node => {
-            const best = getBestPrimary(node, ring2Ids);
-            if (!ring3GroupsByPrimary[best]) ring3GroupsByPrimary[best] = [];
-            ring3GroupsByPrimary[best].push(node);
-          });
-
-          Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
-            const anchorAngle = anchorAngles[primaryId] || 0;
-            const spread = Math.PI / 24;
-            const startAngle = anchorAngle - (spread / 2);
-
-            nodes.forEach((node, i) => {
-              const theta = startAngle + (spread / Math.max(nodes.length - 1, 1)) * i;
-              node.position({
-                x: center.x + radius3 * Math.cos(theta),
-                y: center.y + radius3 * Math.sin(theta)
-              });
-            });
-          });
-
-          cy.layout({ name: 'preset' }).run();
-          cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
-        }
 
         cy.ready(() => {
           const defaultNode = cy.getElementById('individual_0');
