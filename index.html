@@ -129,18 +129,6 @@
             }
           });
 
-          cy.edges().forEach(edge => {
-            const source = edge.source().id();
-            const target = edge.target().id();
-
-            if (directNeighbors.has(source) && source !== nodeId && !directNeighbors.has(target) && target !== nodeId) {
-              secondDegree.add(target);
-            }
-            if (directNeighbors.has(target) && target !== nodeId && !directNeighbors.has(source) && source !== nodeId) {
-              secondDegree.add(source);
-            }
-          });
-
           const ring1 = cy.collection();
           const ring2 = cy.collection();
           const ring3 = cy.collection();
@@ -161,7 +149,6 @@
           ring3.removeClass('faded');
           node.connectedEdges().removeClass('faded');
 
-          // Also show edges between ring1 and ring2 nodes
           cy.edges().forEach(edge => {
             const src = edge.source();
             const tgt = edge.target();
@@ -205,7 +192,6 @@
               x: center.x + radius3 * Math.cos(angle),
               y: center.y + radius3 * Math.sin(angle)
             });
-          });
           });
 
           cy.layout({ name: 'preset' }).run();
