@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Political Ontology Viewer</title>
@@ -17,9 +16,7 @@
     <button onclick="focusOnNode(document.getElementById('nodeSearch').value)">Focus</button>
     <button onclick="resetView()">Reset View</button>
   </div>
-  <div id="cy"></div>
-
-  <script>
+  <div id="cy"></div>  <script>
     fetch('graph.json')
       .then(res => res.json())
       .then(graphData => {
@@ -146,28 +143,31 @@
 
           ring1.removeClass('faded');
           ring2.removeClass('faded');
-          // Hide ring3 nodes unless connected to ring2
-ring3.forEach(node => {
-  const connectedToRing2 = node.connectedEdges().some(edge =>
-    (ring2.has(edge.source()) && ring3.has(edge.target())) ||
-    (ring3.has(edge.source()) && ring2.has(edge.target()))
-  );
-  if (connectedToRing2) {
-    node.removeClass('faded');
-  } else {
-    node.addClass('faded');
-  }
-});
+
+          const visibleRing3 = ring3.filter(n => {
+            const connectedToRing2 = n.connectedEdges().some(edge =>
+              (ring2.has(edge.source()) && ring3.has(edge.target())) ||
+              (ring3.has(edge.source()) && ring2.has(edge.target()))
+            );
+            if (connectedToRing2) {
+              n.removeClass('faded');
+              return true;
+            } else {
+              n.addClass('faded');
+              return false;
+            }
+          });
+
           node.connectedEdges().removeClass('faded');
 
           cy.edges().forEach(edge => {
-  const src = edge.source();
-  const tgt = edge.target();
-  if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt)) ||
-      (ring2.has(src) && ring3.has(tgt)) || (ring3.has(src) && ring2.has(tgt))) {
-    edge.removeClass('faded');
-  }
-});
+            const src = edge.source();
+            const tgt = edge.target();
+            if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt)) ||
+                (ring2.has(src) && ring3.has(tgt)) || (ring3.has(src) && ring2.has(tgt))) {
+              edge.removeClass('faded');
+            }
+          });
 
           const radius1 = 200;
           const radius2 = 400;
@@ -227,12 +227,32 @@ ring3.forEach(node => {
             });
           });
 
-          const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
-          ring3.forEach((ele, i) => {
-            const angle = i * angleStep3;
-            ele.position({
-              x: center.x + radius3 * Math.cos(angle),
-              y: center.y + radius3 * Math.sin(angle)
+          const ring2Ids = new Set(ring2.map(n => n.id()));
+          const ring3GroupsByPrimary = {};
+
+          visibleRing3.forEach(node => {
+            const connections = node.connectedEdges().filter(edge => ring2Ids.has(edge.source().id()) || ring2Ids.has(edge.target().id()));
+            if (connections.length === 0) return;
+
+            const connectedRing2Id = ring2Ids.has(connections[0].source().id()) ? connections[0].source().id() : connections[0].target().id();
+            if (!ring3GroupsByPrimary[connectedRing2Id]) ring3GroupsByPrimary[connectedRing2Id] = [];
+            ring3GroupsByPrimary[connectedRing2Id].push(node);
+          });
+
+          Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
+            const primary = cy.getElementById(primaryId);
+            if (!primary || !primary.position) return;
+            const px = primary.position().x;
+            const py = primary.position().y;
+            const angle = Math.atan2(py - center.y, px - center.x);
+            const offset = (Math.PI / 180) * 8;
+
+            nodes.forEach((node, i) => {
+              const theta = angle + offset * (i - (nodes.length - 1) / 2);
+              node.position({
+                x: center.x + radius3 * Math.cos(theta),
+                y: center.y + radius3 * Math.sin(theta)
+              });
             });
           });
 
@@ -247,6 +267,5 @@ ring3.forEach(node => {
           }
         });
       });
-  </script>
-</body>
+  </script></body>
 </html>
