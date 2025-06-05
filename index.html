@@ -76,6 +76,13 @@
               style: {
                 'display': 'none'
               }
+            },
+            {
+              selector: '.faded-third',
+              style: {
+                'opacity': 0.2,
+                'text-opacity': 0.1
+              }
             }
           ],
           layout: { name: 'preset' },
@@ -98,12 +105,12 @@
         }
 
         window.resetView = function() {
-          cy.elements().removeClass('faded hidden');
+          cy.elements().removeClass('faded hidden faded-third');
           cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
         }
 
         function highlightNode(node) {
-          cy.elements().removeClass('faded hidden');
+          cy.elements().removeClass('faded hidden faded-third');
           cy.elements().addClass('faded');
 
           const center = { x: 0, y: 0 };
@@ -164,7 +171,6 @@
             }
           });
 
-          // Hide all edges, show only relevant ones
           cy.edges().addClass('hidden');
 
           cy.edges().forEach(edge => {
@@ -175,12 +181,15 @@
             const tgtId = tgt.id();
             const isInRing3 = ring3.has(src) && ring3.has(tgt);
 
-            if (
-              !isInRing3 &&
-              (srcId === nodeId || ring1.has(src) || ring2.has(src) || visibleRing3.has(src)) &&
-              (tgtId === nodeId || ring1.has(tgt) || ring2.has(tgt) || visibleRing3.has(tgt))
-            ) {
-              edge.removeClass('hidden faded');
+            const isSecondToThird = (ring2.has(src) && visibleRing3.has(tgt)) ||
+                                     (visibleRing3.has(src) && ring2.has(tgt));
+
+            if (!isInRing3 &&
+                (srcId === nodeId || ring1.has(src) || ring2.has(src) || visibleRing3.has(src)) &&
+                (tgtId === nodeId || ring1.has(tgt) || ring2.has(tgt) || visibleRing3.has(tgt))) {
+
+              edge.removeClass('hidden faded faded-third');
+              if (isSecondToThird) edge.addClass('faded-third');
             }
           });
 
