@@ -257,7 +257,6 @@ Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
     });
   });
 });
-});
 
 cy.layout({ name: 'preset' }).run();
           cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
