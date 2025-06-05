@@ -190,13 +190,7 @@
           });
 
           const angleStep2 = (2 * Math.PI) / Math.max(ring2Sorted.length, 1);
-          ring2Sorted.forEach((ele, i) => {
-            const angle = i * angleStep2;
-            ele.position({
-              x: center.x + radius2 * Math.cos(angle),
-              y: center.y + radius2 * Math.sin(angle)
-            });
-          });
+          $1
           });
 
           const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
@@ -206,6 +200,7 @@
               x: center.x + radius3 * Math.cos(angle),
               y: center.y + radius3 * Math.sin(angle)
             });
+          });
           });
 
           cy.layout({ name: 'preset' }).run();
