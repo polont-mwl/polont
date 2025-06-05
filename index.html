@@ -107,15 +107,26 @@
           node.position(center);
           node.removeClass('faded');
 
+          const nodeId = node.id();
           const directNeighbors = new Set();
           const secondDegree = new Set();
           const nodeId = node.id();
 
           cy.edges().forEach(edge => {
-            if (edge.source().id() === nodeId) {
-              directNeighbors.add(edge.target().id());
-            } else if (edge.target().id() === nodeId) {
-              directNeighbors.add(edge.source().id());
+            const src = edge.source().id();
+            const tgt = edge.target().id();
+            if (src === nodeId) directNeighbors.add(tgt);
+            if (tgt === nodeId) directNeighbors.add(src);
+          });
+
+          cy.nodes().forEach(n => {
+            const nid = n.id();
+            if (nid === nodeId || directNeighbors.has(nid)) return;
+            for (const dn of directNeighbors) {
+              if (cy.getElementById(dn).edgesWith(n).length > 0) {
+                secondDegree.add(nid);
+                break;
+              }
             }
           });
 
