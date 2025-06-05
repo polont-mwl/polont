@@ -243,11 +243,9 @@ ring3Grouped.forEach(item => {
 
 Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
   const primary = cy.getElementById(primaryId);
-  if (!primary || typeof primary.position !== 'function') return;
-  const pos = primary.position();
-  if (!pos || typeof pos.x !== 'number') return;
-  const px = pos.x;
-  const py = pos.y;
+  if (!primary || !primary.position) return;
+  const px = primary.position().x;
+  const py = primary.position().y;
   const angle = Math.atan2(py - center.y, px - center.x);
   const offset = (Math.PI / 180) * 6;
 
@@ -259,17 +257,9 @@ Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
     });
   });
 });
-}
-});
-});
-  });
-}, 0);
-  });
-});
+          });
 
-cy.layout({ name: 'preset' }).run();
-
-
+          cy.layout({ name: 'preset' }).run();
           cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
         }
 
