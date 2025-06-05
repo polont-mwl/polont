@@ -240,18 +240,9 @@ const ring3Grouped = ring3Array.map(node => {
   return { node, key, primary: connections[0] || '' };
 });
 
-ring3Grouped.sort((a, b) => {
-  if (a.primary < b.primary) return -1;
-  if (a.primary > b.primary) return 1;
-  return a.key.localeCompare(b.key);
-});
+// Only keep one declaration and logic for ring3Grouped
+// Remove redundant duplicate logic below
 
-const ring3GroupsByPrimary = {};
-ring3Grouped.forEach(item => {
-  const key = item.primary;
-  if (!ring3GroupsByPrimary[key]) ring3GroupsByPrimary[key] = [];
-  ring3GroupsByPrimary[key].push(item.node);
-});
 
 Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
   const primary = cy.getElementById(primaryId);
