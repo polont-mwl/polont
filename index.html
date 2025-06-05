@@ -112,11 +112,15 @@
           const secondDegree = new Set();
 
           cy.edges().forEach(edge => {
-            const src = edge.source().id();
-            const tgt = edge.target().id();
-            if (src === nodeId) directNeighbors.add(tgt);
-            if (tgt === nodeId) directNeighbors.add(src);
-          });
+  const src = edge.source();
+  const tgt = edge.target();
+  if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt))) {
+    edge.removeClass('faded');
+  }
+  if ((ring2.has(src) && ring3.has(tgt)) || (ring3.has(src) && ring2.has(tgt))) {
+    edge.removeClass('faded');
+  }
+});
 
           cy.nodes().forEach(n => {
             const nid = n.id();
