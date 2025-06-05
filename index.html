@@ -207,10 +207,9 @@
             });
           });
 
-          const ring2Array = ring2.toArray();
           const ring1Ids = new Set(ring1.map(n => n.id()));
 
-          const ring2Grouped = ring2Array.map(node => {
+          const ring2Grouped = ring2.toArray().map(node => {
             const connections = cy.edges().filter(e =>
               (ring1Ids.has(e.source().id()) && e.target().id() === node.id()) ||
               (ring1Ids.has(e.target().id()) && e.source().id() === node.id())
@@ -220,14 +219,6 @@
             return { node, key, primary: connections[0] || '' };
           });
 
-          ring2Grouped.sort((a, b) => {
-            if (a.primary < b.primary) return -1;
-            if (a.primary > b.primary) return 1;
-            return a.key.localeCompare(b.key);
-          });
-
-          const ring2Sorted = ring2Grouped.map(item => item.node);
-
           const ring2GroupsByPrimary = {};
           ring2Grouped.forEach(item => {
             const key = item.primary;
@@ -235,16 +226,16 @@
             ring2GroupsByPrimary[key].push(item.node);
           });
 
+          let usedAngle2 = 0;
+          const total2 = Object.values(ring2GroupsByPrimary).reduce((a, b) => a + b.length, 0);
+
           Object.entries(ring2GroupsByPrimary).forEach(([primaryId, nodes]) => {
-            const primary = cy.getElementById(primaryId);
-            if (!primary || !primary.position) return;
-            const px = primary.position().x;
-            const py = primary.position().y;
-            const angle = Math.atan2(py - center.y, px - center.x);
-            const offset = (Math.PI / 180) * 10;
+            const anglePerNode = (2 * Math.PI) * (nodes.length / total2);
+            const baseAngle = usedAngle2;
+            usedAngle2 += anglePerNode;
 
             nodes.forEach((node, i) => {
-              const theta = angle + offset * (i - (nodes.length - 1) / 2);
+              const theta = baseAngle + (anglePerNode / nodes.length) * i;
               node.position({
                 x: center.x + radius2 * Math.cos(theta),
                 y: center.y + radius2 * Math.sin(theta)
@@ -264,16 +255,16 @@
             ring3GroupsByPrimary[connectedRing2Id].push(node);
           });
 
+          let usedAngle3 = 0;
+          const total3 = Object.values(ring3GroupsByPrimary).reduce((a, b) => a + b.length, 0);
+
           Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
-            const primary = cy.getElementById(primaryId);
-            if (!primary || !primary.position) return;
-            const px = primary.position().x;
-            const py = primary.position().y;
-            const angle = Math.atan2(py - center.y, px - center.x);
-            const offset = (Math.PI / 180) * 6;
+            const anglePerNode = (2 * Math.PI) * (nodes.length / total3);
+            const baseAngle = usedAngle3;
+            usedAngle3 += anglePerNode;
 
             nodes.forEach((node, i) => {
-              const theta = angle + offset * (i - (nodes.length - 1) / 2);
+              const theta = baseAngle + (anglePerNode / nodes.length) * i;
               node.position({
                 x: center.x + radius3 * Math.cos(theta),
                 y: center.y + radius3 * Math.sin(theta)
