@@ -47,8 +47,8 @@
                 'color': '#fff',
                 'text-outline-width': 1,
                 'text-outline-color': '#000',
-                'width': 40,
-                'height': 40
+                'width': 30,
+                'height': 30
               }
             },
             {
@@ -195,8 +195,8 @@
           });
 
           const radius1 = 200;
-          const radius2 = 400;
-          const radius3 = 600;
+          const radius2 = 500;
+          const radius3 = 800;
 
           const angleStep1 = (2 * Math.PI) / Math.max(ring1.length, 1);
           ring1.forEach((ele, i) => {
@@ -270,7 +270,7 @@
             const px = primary.position().x;
             const py = primary.position().y;
             const angle = Math.atan2(py - center.y, px - center.x);
-            const offset = (Math.PI / 180) * 8;
+            const offset = (Math.PI / 180) * 6;
 
             nodes.forEach((node, i) => {
               const theta = angle + offset * (i - (nodes.length - 1) / 2);
