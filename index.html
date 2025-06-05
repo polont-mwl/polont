@@ -114,7 +114,7 @@
           node.removeClass('faded');
           node.connectedEdges().removeClass('faded');
           node.connectedEdges().connectedNodes().removeClass('faded');
-          cy.animate({ center: { eles: node }, zoom: 2, duration: 500 });
+          cy.animate({ fit: { eles: node.closedNeighborhood(), padding: 50 }, duration: 500 });
         }
 
         // Auto-focus on default node
