@@ -170,11 +170,20 @@
             });
           });
 
-          const ring2Sorted = ring2.sort((a, b) => {
-            const aDegree = cy.edges().filter(e => (e.source().id() === a.id() && ring1.has(e.target())) || (e.target().id() === a.id() && ring1.has(e.source()))).length;
-            const bDegree = cy.edges().filter(e => (e.source().id() === b.id() && ring1.has(e.target())) || (e.target().id() === b.id() && ring1.has(e.source()))).length;
-            return bDegree - aDegree;
-          });
+          const ring2Array = ring2.toArray();
+const ring1Ids = new Set(ring1.map(n => n.id()));
+
+const ring2Sorted = ring2Array.sort((a, b) => {
+  const aTargets = cy.edges().filter(e => ring1Ids.has(e.source().id()) && e.target().id() === a.id() || ring1Ids.has(e.target().id()) && e.source().id() === a.id()).map(e => {
+    return ring1Ids.has(e.source().id()) ? e.source().id() : e.target().id();
+  });
+  const bTargets = cy.edges().filter(e => ring1Ids.has(e.source().id()) && e.target().id() === b.id() || ring1Ids.has(e.target().id()) && e.source().id() === b.id()).map(e => {
+    return ring1Ids.has(e.source().id()) ? e.source().id() : e.target().id();
+  });
+  const aSig = aTargets.sort().join(',');
+  const bSig = bTargets.sort().join(',');
+  return aSig.localeCompare(bSig);
+});
 
           const angleStep2 = (2 * Math.PI) / Math.max(ring2Sorted.length, 1);
           ring2Sorted.forEach((ele, i) => {
