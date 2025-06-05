@@ -173,17 +173,23 @@
           const ring2Array = ring2.toArray();
 const ring1Ids = new Set(ring1.map(n => n.id()));
 
-const ring2Sorted = ring2Array.sort((a, b) => {
-  const aTargets = cy.edges().filter(e => ring1Ids.has(e.source().id()) && e.target().id() === a.id() || ring1Ids.has(e.target().id()) && e.source().id() === a.id()).map(e => {
-    return ring1Ids.has(e.source().id()) ? e.source().id() : e.target().id();
-  });
-  const bTargets = cy.edges().filter(e => ring1Ids.has(e.source().id()) && e.target().id() === b.id() || ring1Ids.has(e.target().id()) && e.source().id() === b.id()).map(e => {
-    return ring1Ids.has(e.source().id()) ? e.source().id() : e.target().id();
-  });
-  const aSig = aTargets.sort().join(',');
-  const bSig = bTargets.sort().join(',');
-  return aSig.localeCompare(bSig);
+const ring2Grouped = ring2Array.map(node => {
+  const connections = cy.edges().filter(e =>
+    (ring1Ids.has(e.source().id()) && e.target().id() === node.id()) ||
+    (ring1Ids.has(e.target().id()) && e.source().id() === node.id())
+  ).map(e => ring1Ids.has(e.source().id()) ? e.source().id() : e.target().id());
+
+  const key = connections.sort().join(',');
+  return { node, key, primary: connections[0] || '' };
 });
+
+ring2Grouped.sort((a, b) => {
+  if (a.primary < b.primary) return -1;
+  if (a.primary > b.primary) return 1;
+  return a.key.localeCompare(b.key);
+});
+
+const ring2Sorted = ring2Grouped.map(item => item.node);
 
           const angleStep2 = (2 * Math.PI) / Math.max(ring2Sorted.length, 1);
           ring2Sorted.forEach((ele, i) => {
