@@ -225,6 +225,7 @@
 
           const total2 = primaryCounts.reduce((sum, p) => sum + p.count, 0);
           let usedAngle = 0;
+          const anchorAngles = {};
 
           primaryCounts.forEach(({ id: primaryId, count }) => {
             const angleSpan = (2 * Math.PI) * (count / total2);
@@ -233,6 +234,7 @@
 
             const primary = cy.getElementById(primaryId);
             const midAngle = baseAngle + angleSpan / 2;
+            anchorAngles[primaryId] = midAngle;
             primary.position({
               x: center.x + radius1 * Math.cos(midAngle),
               y: center.y + radius1 * Math.sin(midAngle)
@@ -245,6 +247,7 @@
                 x: center.x + radius2 * Math.cos(theta),
                 y: center.y + radius2 * Math.sin(theta)
               });
+              anchorAngles[node.id()] = theta;
             });
           });
 
@@ -257,16 +260,13 @@
             ring3GroupsByPrimary[best].push(node);
           });
 
-          const total3 = Object.values(ring3GroupsByPrimary).reduce((a, b) => a + b.length, 0);
-          usedAngle = 0;
-
           Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
-            const angleSpan = (2 * Math.PI) * (nodes.length / total3);
-            const baseAngle = usedAngle;
-            usedAngle += angleSpan;
+            const anchorAngle = anchorAngles[primaryId] || 0;
+            const spread = Math.PI / 24;
+            const startAngle = anchorAngle - (spread / 2);
 
             nodes.forEach((node, i) => {
-              const theta = baseAngle + (angleSpan / nodes.length) * i;
+              const theta = startAngle + (spread / Math.max(nodes.length - 1, 1)) * i;
               node.position({
                 x: center.x + radius3 * Math.cos(theta),
                 y: center.y + radius3 * Math.sin(theta)
