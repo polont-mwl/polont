@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Political Ontology Viewer</title>
@@ -22,7 +23,9 @@
       <option value="1">1</option>
     </select>
   </div>
-  <div id="cy"></div>  <script>
+  <div id="cy"></div>
+
+  <script>
     let cy, currentNodeId, ring1, ring2, ring3, visibleRing3;
     let radius1 = 200, radius2 = 500, radius3 = 800;
 
@@ -59,15 +62,6 @@
 
     function highlightNode(node) {
       currentNodeId = node.id();
-node.animate({
-  style: { 'border-color': '#fff', 'border-width': 5 }
-}, {
-  duration: 200
-}).then(() => {
-  return node.animate({
-    style: { 'border-width': 0 }
-  }, { duration: 200 });
-});
       const depth = parseInt(document.getElementById('depth').value);
 
       cy.elements().removeClass('faded hidden faded-third');
@@ -215,25 +209,8 @@ node.animate({
         });
       });
 
-      cy.nodes().forEach(node => {
-  const pos = node.position();
-  node.animate({
-    position: { x: pos.x, y: pos.y }
-  }, {
-    duration: 500,
-    easing: 'ease-in-out'
-  });
-});
-
-cy.animate({
-  fit: {
-    eles: cy.elements(),
-    padding: 100
-  }
-}, {
-  duration: 500,
-  easing: 'ease-in-out'
-});
+      cy.layout({ name: 'preset' }).run();
+      cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
     }
 
     fetch('graph.json')
@@ -309,17 +286,13 @@ cy.animate({
           maxZoom: 3
         });
 
-        cy.on('tap', 'node', function(evt) {
-  const node = evt.target;
-  highlightNode(node);
-});
-
-cy.ready(() => {
+        cy.ready(() => {
           const defaultNode = cy.getElementById('individual_0');
           if (defaultNode && defaultNode.length > 0) {
             highlightNode(defaultNode);
           }
         });
       });
-  </script></body>
+  </script>
+</body>
 </html>
