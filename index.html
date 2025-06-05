@@ -70,6 +70,12 @@
                 'opacity': 0.1,
                 'text-opacity': 0.05
               }
+            },
+            {
+              selector: '.hidden',
+              style: {
+                'display': 'none'
+              }
             }
           ],
           layout: { name: 'preset' },
@@ -92,12 +98,12 @@
         }
 
         window.resetView = function() {
-          cy.elements().removeClass('faded');
+          cy.elements().removeClass('faded hidden');
           cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
         }
 
         function highlightNode(node) {
-          cy.elements().removeClass('faded');
+          cy.elements().removeClass('faded hidden');
           cy.elements().addClass('faded');
 
           const center = { x: 0, y: 0 };
@@ -153,19 +159,22 @@
               n.removeClass('faded');
               return true;
             } else {
-              n.addClass('faded');
+              n.removeClass('faded').addClass('hidden');
               return false;
             }
           });
 
-          node.connectedEdges().removeClass('faded');
+          // Hide all edges, show only relevant ones
+          cy.edges().addClass('hidden');
 
           cy.edges().forEach(edge => {
             const src = edge.source();
             const tgt = edge.target();
-            if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt)) ||
-                (ring2.has(src) && ring3.has(tgt)) || (ring3.has(src) && ring2.has(tgt))) {
-              edge.removeClass('faded');
+            if (
+              (src.id() === nodeId || ring1.has(src) || ring2.has(src) || visibleRing3.has(src)) &&
+              (tgt.id() === nodeId || ring1.has(tgt) || ring2.has(tgt) || visibleRing3.has(tgt))
+            ) {
+              edge.removeClass('hidden faded');
             }
           });
 
