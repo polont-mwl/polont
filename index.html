@@ -150,12 +150,13 @@
           node.connectedEdges().removeClass('faded');
 
           cy.edges().forEach(edge => {
-            const src = edge.source();
-            const tgt = edge.target();
-            if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt))) {
-              edge.removeClass('faded');
-            }
-          });
+  const src = edge.source();
+  const tgt = edge.target();
+  if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt)) ||
+      (ring2.has(src) && ring3.has(tgt)) || (ring3.has(src) && ring2.has(tgt))) {
+    edge.removeClass('faded');
+  }
+});
 
           const radius1 = 200;
           const radius2 = 400;
