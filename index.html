@@ -255,6 +255,36 @@ ring3Grouped.forEach(item => {
 
 Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
   const primary = cy.getElementById(primaryId);
+  if (!primary || typeof primary.position !== 'function') return;
+  const px = primary.position().x;
+  const py = primary.position().y;
+  const angle = Math.atan2(py - center.y, px - center.x);
+  const offset = (Math.PI / 180) * 6;
+
+  nodes.forEach((node, i) => {
+    const theta = angle + offset * (i - (nodes.length - 1) / 2);
+    node.position({
+      x: center.x + radius3 * Math.cos(theta),
+      y: center.y + radius3 * Math.sin(theta)
+    });
+  });
+});
+
+ring3Grouped.sort((a, b) => {
+  if (a.primary < b.primary) return -1;
+  if (a.primary > b.primary) return 1;
+  return a.key.localeCompare(b.key);
+});
+
+const ring3GroupsByPrimary = {};
+ring3Grouped.forEach(item => {
+  const key = item.primary;
+  if (!ring3GroupsByPrimary[key]) ring3GroupsByPrimary[key] = [];
+  ring3GroupsByPrimary[key].push(item.node);
+});
+
+Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
+  const primary = cy.getElementById(primaryId);
   if (!primary || !primary.position) return;
   const px = primary.position().x;
   const py = primary.position().y;
