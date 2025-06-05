@@ -146,7 +146,18 @@
 
           ring1.removeClass('faded');
           ring2.removeClass('faded');
-          ring3.removeClass('faded');
+          // Hide ring3 nodes unless connected to ring2
+ring3.forEach(node => {
+  const connectedToRing2 = node.connectedEdges().some(edge =>
+    (ring2.has(edge.source()) && ring3.has(edge.target())) ||
+    (ring3.has(edge.source()) && ring2.has(edge.target()))
+  );
+  if (connectedToRing2) {
+    node.removeClass('faded');
+  } else {
+    node.addClass('faded');
+  }
+});
           node.connectedEdges().removeClass('faded');
 
           cy.edges().forEach(edge => {
