@@ -114,12 +114,8 @@
   node.removeClass('faded');
   node.connectedEdges().removeClass('faded');
   node.connectedEdges().connectedNodes().removeClass('faded');
-
-  // Fit to second-degree connections for a broader context
-  const secondDegree = node.closedNeighborhood().union(
-    node.closedNeighborhood().connectedEdges().connectedNodes()
-  );
-  cy.animate({ fit: { eles: secondDegree, padding: 100 }, duration: 500 });
+  cy.animate({ fit: { eles: node.closedNeighborhood(), padding: 50 }, duration: 500 });
+}, duration: 500 });
 }, duration: 500 });
         }
 
