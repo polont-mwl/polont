@@ -75,9 +75,7 @@
               }
             }
           ],
-          layout: {
-            name: 'preset'
-          },
+          layout: { name: 'preset' },
           minZoom: 0.2,
           maxZoom: 3
         });
@@ -102,204 +100,63 @@
         }
 
         function highlightNode(node) {
-  cy.elements().removeClass('faded');
-  cy.elements().addClass('faded');
+          cy.elements().removeClass('faded');
+          cy.elements().addClass('faded');
 
-  const center = { x: 0, y: 0 };
-  node.position(center);
-  node.removeClass('faded');
-
-  const directNeighbors = new Set();
-  const secondDegree = new Set();
-  const nodeId = node.id();
-
-  cy.edges().forEach(edge => {
-    if (edge.source().id() === nodeId) {
-      directNeighbors.add(edge.target().id());
-    } else if (edge.target().id() === nodeId) {
-      directNeighbors.add(edge.source().id());
-    }
-  });
-
-  cy.edges().forEach(edge => {
-    const source = edge.source().id();
-    const target = edge.target().id();
-
-    if (directNeighbors.has(source) && source !== nodeId && !directNeighbors.has(target) && target !== nodeId) {
-      secondDegree.add(target);
-    }
-    if (directNeighbors.has(target) && target !== nodeId && !directNeighbors.has(source) && source !== nodeId) {
-      secondDegree.add(source);
-    }
-  });
-
-  const ring1 = cy.collection();
-  const ring2 = cy.collection();
-  const ring3 = cy.collection();
-
-  cy.nodes().forEach(n => {
-    if (n.id() === nodeId) return;
-    if (directNeighbors.has(n.id())) {
-      ring1.merge(n);
-    } else if (secondDegree.has(n.id())) {
-      ring2.merge(n);
-    } else {
-      ring3.merge(n);
-    }
-  });
-
-  ring1.removeClass('faded');
-  ring2.removeClass('faded');
-  ring3.removeClass('faded');
-  node.connectedEdges().removeClass('faded');
-
-  const radius1 = 200;
-  const radius2 = 400;
-  const radius3 = 600;
-
-  const angleStep1 = (2 * Math.PI) / Math.max(ring1.length, 1);
-  ring1.forEach((ele, i) => {
-    const angle = i * angleStep1;
-    ele.position({
-      x: center.x + radius1 * Math.cos(angle),
-      y: center.y + radius1 * Math.sin(angle)
-    });
-  });
-
-  const angleStep2 = (2 * Math.PI) / Math.max(ring2.length, 1);
-  ring2.forEach((ele, i) => {
-    const angle = i * angleStep2;
-    ele.position({
-      x: center.x + radius2 * Math.cos(angle),
-      y: center.y + radius2 * Math.sin(angle)
-    });
-  });
-
-  const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
-  ring3.forEach((ele, i) => {
-    const angle = i * angleStep3;
-    ele.position({
-      x: center.x + radius3 * Math.cos(angle),
-      y: center.y + radius3 * Math.sin(angle)
-    });
-  });
-
-  cy.layout({ name: 'preset' }).run();
-  cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
-}
-  node.position(center);
-  node.removeClass('faded');
-
-  const directNeighbors = new Set();
-  const secondDegree = new Set();
-  const nodeId = node.id();
-
-  cy.edges().forEach(edge => {
-    if (edge.source().id() === nodeId) {
-      directNeighbors.add(edge.target().id());
-    } else if (edge.target().id() === nodeId) {
-      directNeighbors.add(edge.source().id());
-    }
-  });
-
-  cy.edges().forEach(edge => {
-    const source = edge.source().id();
-    const target = edge.target().id();
-
-    if (directNeighbors.has(source) && source !== nodeId && !directNeighbors.has(target) && target !== nodeId) {
-      secondDegree.add(target);
-    }
-    if (directNeighbors.has(target) && target !== nodeId && !directNeighbors.has(source) && source !== nodeId) {
-      secondDegree.add(source);
-    }
-  });
-
-  const ring1 = cy.collection();
-  const ring2 = cy.collection();
-  const ring3 = cy.collection();
-
-  cy.nodes().forEach(n => {
-    if (n.id() === nodeId) return;
-    if (directNeighbors.has(n.id())) {
-      ring1.merge(n);
-    } else if (secondDegree.has(n.id())) {
-      ring2.merge(n);
-    } else {
-      ring3.merge(n);
-    }
-  });
-
-  ring1.removeClass('faded');
-  ring2.removeClass('faded');
-  ring3.removeClass('faded');
-  node.connectedEdges().removeClass('faded');
-
-  const radius1 = 200;
-  const radius2 = 400;
-  const radius3 = 600;
-
-  const angleStep1 = (2 * Math.PI) / Math.max(ring1.length, 1);
-  ring1.forEach((ele, i) => {
-    const angle = i * angleStep1;
-    ele.position({
-      x: center.x + radius1 * Math.cos(angle),
-      y: center.y + radius1 * Math.sin(angle)
-    });
-  });
-
-  const angleStep2 = (2 * Math.PI) / Math.max(ring2.length, 1);
-  ring2.forEach((ele, i) => {
-    const angle = i * angleStep2;
-    ele.position({
-      x: center.x + radius2 * Math.cos(angle),
-      y: center.y + radius2 * Math.sin(angle)
-    });
-  });
-
-  const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
-  ring3.forEach((ele, i) => {
-    const angle = i * angleStep3;
-    ele.position({
-      x: center.x + radius3 * Math.cos(angle),
-      y: center.y + radius3 * Math.sin(angle)
-    });
-  });
-
-  cy.layout({ name: 'preset' }).run();
-  cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
-};
+          const center = { x: 0, y: 0 };
           node.position(center);
           node.removeClass('faded');
 
-          const neighbors = node.connectedNodes();
-          neighbors.removeClass('faded');
-          node.connectedEdges().removeClass('faded');
+          const directNeighbors = new Set();
+          const secondDegree = new Set();
+          const nodeId = node.id();
 
-          const neighborIds = new Set(neighbors.map(n => n.id()));
-          const secondDegreeIds = new Set();
-
-          neighbors.forEach(n => {
-            n.connectedNodes().forEach(nn => {
-              const id = nn.id();
-              if (id !== node.id() && !neighborIds.has(id)) {
-                secondDegreeIds.add(id);
-              }
-            });
+          cy.edges().forEach(edge => {
+            if (edge.source().id() === nodeId) {
+              directNeighbors.add(edge.target().id());
+            } else if (edge.target().id() === nodeId) {
+              directNeighbors.add(edge.source().id());
+            }
           });
 
-          const secondDegree = cy.collection();
-          secondDegreeIds.forEach(id => secondDegree.merge(cy.getElementById(id)));
-          secondDegree.removeClass('faded');
+          cy.edges().forEach(edge => {
+            const source = edge.source().id();
+            const target = edge.target().id();
 
-          const others = cy.nodes().not(node).not(neighbors).not(secondDegree);
-          others.removeClass('faded');
+            if (directNeighbors.has(source) && source !== nodeId && !directNeighbors.has(target) && target !== nodeId) {
+              secondDegree.add(target);
+            }
+            if (directNeighbors.has(target) && target !== nodeId && !directNeighbors.has(source) && source !== nodeId) {
+              secondDegree.add(source);
+            }
+          });
+
+          const ring1 = cy.collection();
+          const ring2 = cy.collection();
+          const ring3 = cy.collection();
+
+          cy.nodes().forEach(n => {
+            if (n.id() === nodeId) return;
+            if (directNeighbors.has(n.id())) {
+              ring1.merge(n);
+            } else if (secondDegree.has(n.id())) {
+              ring2.merge(n);
+            } else {
+              ring3.merge(n);
+            }
+          });
+
+          ring1.removeClass('faded');
+          ring2.removeClass('faded');
+          ring3.removeClass('faded');
+          node.connectedEdges().removeClass('faded');
 
           const radius1 = 200;
           const radius2 = 400;
           const radius3 = 600;
 
-          const angleStep1 = (2 * Math.PI) / Math.max(neighbors.length, 1);
-          neighbors.forEach((ele, i) => {
+          const angleStep1 = (2 * Math.PI) / Math.max(ring1.length, 1);
+          ring1.forEach((ele, i) => {
             const angle = i * angleStep1;
             ele.position({
               x: center.x + radius1 * Math.cos(angle),
@@ -307,8 +164,8 @@
             });
           });
 
-          const angleStep2 = (2 * Math.PI) / Math.max(secondDegree.length, 1);
-          secondDegree.forEach((ele, i) => {
+          const angleStep2 = (2 * Math.PI) / Math.max(ring2.length, 1);
+          ring2.forEach((ele, i) => {
             const angle = i * angleStep2;
             ele.position({
               x: center.x + radius2 * Math.cos(angle),
@@ -316,8 +173,8 @@
             });
           });
 
-          const angleStep3 = (2 * Math.PI) / Math.max(others.length, 1);
-          others.forEach((ele, i) => {
+          const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
+          ring3.forEach((ele, i) => {
             const angle = i * angleStep3;
             ele.position({
               x: center.x + radius3 * Math.cos(angle),
