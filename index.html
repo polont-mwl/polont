@@ -26,7 +26,7 @@
   <div id="cy"></div>
 
   <script>
-    let cy, currentNodeId, ring1, ring2, ring3, visibleRing3;
+    let cy, currentNode, ring1, ring2, ring3, visibleRing3;
     let radius1 = 200, radius2 = 500, radius3 = 800;
 
     function getBestPrimary(node, primaryIds) {
@@ -43,25 +43,11 @@
     }
 
     function updateDepth() {
-      if (currentNodeId) {
-        const node = cy.getElementById(currentNodeId);
-        if (node && node.length > 0) {
-          highlightNode(node);
-        }
-      }
-    }
-
-    function focusOnNode(id) {
-      const node = cy.getElementById(id);
-      if (node && node.length > 0) {
-        highlightNode(node);
-      } else {
-        alert('Node not found');
-      }
+      if (currentNode) highlightNode(currentNode);
     }
 
     function highlightNode(node) {
-      currentNodeId = node.id();
+      currentNode = node;
       const depth = parseInt(document.getElementById('depth').value);
 
       cy.elements().removeClass('faded hidden faded-third');
