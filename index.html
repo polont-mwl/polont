@@ -191,13 +191,31 @@ ring2Grouped.sort((a, b) => {
 
 const ring2Sorted = ring2Grouped.map(item => item.node);
 
-          const angleStep2 = (2 * Math.PI) / Math.max(ring2Sorted.length, 1);
-          ring2Sorted.forEach((ele, i) => {
-            const angle = i * angleStep2;
-            ele.position({
-              x: center.x + radius2 * Math.cos(angle),
-              y: center.y + radius2 * Math.sin(angle)
-            });
+          // Group ring2 nodes by primary ID
+const ring2GroupsByPrimary = {};
+ring2Grouped.forEach(item => {
+  const key = item.primary;
+  if (!ring2GroupsByPrimary[key]) ring2GroupsByPrimary[key] = [];
+  ring2GroupsByPrimary[key].push(item.node);
+});
+
+// Layout ring2 nodes in clusters near their primary
+Object.entries(ring2GroupsByPrimary).forEach(([primaryId, nodes]) => {
+  const primary = cy.getElementById(primaryId);
+  if (!primary) return;
+  const px = primary.position().x;
+  const py = primary.position().y;
+  const angle = Math.atan2(py - center.y, px - center.x);
+  const offset = (Math.PI / 180) * 10;
+
+  nodes.forEach((node, i) => {
+    const theta = angle + offset * (i - (nodes.length - 1) / 2);
+    node.position({
+      x: center.x + radius2 * Math.cos(theta),
+      y: center.y + radius2 * Math.sin(theta)
+    });
+  });
+});
           });
 
           const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
