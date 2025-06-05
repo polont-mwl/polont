@@ -211,15 +211,6 @@
           const radius2 = 500;
           const radius3 = 800;
 
-          const angleStep1 = (2 * Math.PI) / Math.max(ring1.length, 1);
-          ring1.forEach((ele, i) => {
-            const angle = i * angleStep1;
-            ele.position({
-              x: center.x + radius1 * Math.cos(angle),
-              y: center.y + radius1 * Math.sin(angle)
-            });
-          });
-
           const ring1Ids = new Set(ring1.map(n => n.id()));
 
           const ring2GroupsByPrimary = {};
@@ -229,16 +220,27 @@
             ring2GroupsByPrimary[best].push(node);
           });
 
-          let usedAngle2 = 0;
-          const total2 = Object.values(ring2GroupsByPrimary).reduce((a, b) => a + b.length, 0);
+          const primaryCounts = Object.entries(ring2GroupsByPrimary).map(([id, nodes]) => ({ id, count: nodes.length }));
+          primaryCounts.sort((a, b) => b.count - a.count);
 
-          Object.entries(ring2GroupsByPrimary).forEach(([primaryId, nodes]) => {
-            const anglePerNode = (2 * Math.PI) * (nodes.length / total2);
-            const baseAngle = usedAngle2;
-            usedAngle2 += anglePerNode;
+          const total2 = primaryCounts.reduce((sum, p) => sum + p.count, 0);
+          let usedAngle = 0;
 
-            nodes.forEach((node, i) => {
-              const theta = baseAngle + (anglePerNode / nodes.length) * i;
+          primaryCounts.forEach(({ id: primaryId, count }) => {
+            const angleSpan = (2 * Math.PI) * (count / total2);
+            const baseAngle = usedAngle;
+            usedAngle += angleSpan;
+
+            const primary = cy.getElementById(primaryId);
+            const midAngle = baseAngle + angleSpan / 2;
+            primary.position({
+              x: center.x + radius1 * Math.cos(midAngle),
+              y: center.y + radius1 * Math.sin(midAngle)
+            });
+
+            const groupNodes = ring2GroupsByPrimary[primaryId] || [];
+            groupNodes.forEach((node, i) => {
+              const theta = baseAngle + (angleSpan / groupNodes.length) * i;
               node.position({
                 x: center.x + radius2 * Math.cos(theta),
                 y: center.y + radius2 * Math.sin(theta)
@@ -255,16 +257,16 @@
             ring3GroupsByPrimary[best].push(node);
           });
 
-          let usedAngle3 = 0;
           const total3 = Object.values(ring3GroupsByPrimary).reduce((a, b) => a + b.length, 0);
+          usedAngle = 0;
 
           Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
-            const anglePerNode = (2 * Math.PI) * (nodes.length / total3);
-            const baseAngle = usedAngle3;
-            usedAngle3 += anglePerNode;
+            const angleSpan = (2 * Math.PI) * (nodes.length / total3);
+            const baseAngle = usedAngle;
+            usedAngle += angleSpan;
 
             nodes.forEach((node, i) => {
-              const theta = baseAngle + (anglePerNode / nodes.length) * i;
+              const theta = baseAngle + (angleSpan / nodes.length) * i;
               node.position({
                 x: center.x + radius3 * Math.cos(theta),
                 y: center.y + radius3 * Math.sin(theta)
