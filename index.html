@@ -109,6 +109,19 @@
           cy.animate({ fit: { eles: cy.elements(), padding: 100 }, duration: 500 });
         }
 
+        function getBestPrimary(node, primaryIds) {
+          const scoreMap = {};
+          node.connectedEdges().forEach(edge => {
+            const source = edge.source().id();
+            const target = edge.target().id();
+            const neighbor = source === node.id() ? target : source;
+            if (primaryIds.has(neighbor)) {
+              scoreMap[neighbor] = (scoreMap[neighbor] || 0) + 1;
+            }
+          });
+          return Object.entries(scoreMap).sort((a, b) => b[1] - a[1])[0]?.[0] || '';
+        }
+
         function highlightNode(node) {
           cy.elements().removeClass('faded hidden faded-third');
           cy.elements().addClass('faded');
@@ -209,21 +222,11 @@
 
           const ring1Ids = new Set(ring1.map(n => n.id()));
 
-          const ring2Grouped = ring2.toArray().map(node => {
-            const connections = cy.edges().filter(e =>
-              (ring1Ids.has(e.source().id()) && e.target().id() === node.id()) ||
-              (ring1Ids.has(e.target().id()) && e.source().id() === node.id())
-            ).map(e => ring1Ids.has(e.source().id()) ? e.source().id() : e.target().id());
-
-            const key = connections.sort().join(',');
-            return { node, key, primary: connections[0] || '' };
-          });
-
           const ring2GroupsByPrimary = {};
-          ring2Grouped.forEach(item => {
-            const key = item.primary;
-            if (!ring2GroupsByPrimary[key]) ring2GroupsByPrimary[key] = [];
-            ring2GroupsByPrimary[key].push(item.node);
+          ring2.forEach(node => {
+            const best = getBestPrimary(node, ring1Ids);
+            if (!ring2GroupsByPrimary[best]) ring2GroupsByPrimary[best] = [];
+            ring2GroupsByPrimary[best].push(node);
           });
 
           let usedAngle2 = 0;
@@ -247,12 +250,9 @@
           const ring3GroupsByPrimary = {};
 
           visibleRing3.forEach(node => {
-            const connections = node.connectedEdges().filter(edge => ring2Ids.has(edge.source().id()) || ring2Ids.has(edge.target().id()));
-            if (connections.length === 0) return;
-
-            const connectedRing2Id = ring2Ids.has(connections[0].source().id()) ? connections[0].source().id() : connections[0].target().id();
-            if (!ring3GroupsByPrimary[connectedRing2Id]) ring3GroupsByPrimary[connectedRing2Id] = [];
-            ring3GroupsByPrimary[connectedRing2Id].push(node);
+            const best = getBestPrimary(node, ring2Ids);
+            if (!ring3GroupsByPrimary[best]) ring3GroupsByPrimary[best] = [];
+            ring3GroupsByPrimary[best].push(node);
           });
 
           let usedAngle3 = 0;
