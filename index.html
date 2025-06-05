@@ -215,48 +215,13 @@
             });
           });
 
-          const ring3Array = ring3.toArray();
-const ring2Ids = new Set(ring2.map(n => n.id()));
-
-const ring3Grouped = ring3Array.map(node => {
-  const connections = cy.edges().filter(e =>
-    (ring2Ids.has(e.source().id()) && e.target().id() === node.id()) ||
-    (ring2Ids.has(e.target().id()) && e.source().id() === node.id())
-  ).map(e => ring2Ids.has(e.source().id()) ? e.source().id() : e.target().id());
-
-  const key = connections.sort().join(',');
-  return { node, key, primary: connections[0] || '' };
-});
-
-ring3Grouped.sort((a, b) => {
-  if (a.primary < b.primary) return -1;
-  if (a.primary > b.primary) return 1;
-  return a.key.localeCompare(b.key);
-});
-
-const ring3GroupsByPrimary = {};
-ring3Grouped.forEach(item => {
-  const key = item.primary;
-  if (!ring3GroupsByPrimary[key]) ring3GroupsByPrimary[key] = [];
-  ring3GroupsByPrimary[key].push(item.node);
-});
-
-Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
-  const primary = cy.getElementById(primaryId);
-  if (!primary || !primary.position) return;
-  const px = primary.position().x;
-  const py = primary.position().y;
-  const angle = Math.atan2(py - center.y, px - center.x);
-  const offset = (Math.PI / 180) * 6;
-
-  nodes.forEach((node, i) => {
-    const theta = angle + offset * (i - (nodes.length - 1) / 2);
-    node.position({
-      x: center.x + radius3 * Math.cos(theta),
-      y: center.y + radius3 * Math.sin(theta)
-    });
-  });
-});
+          const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
+          ring3.forEach((ele, i) => {
+            const angle = i * angleStep3;
+            ele.position({
+              x: center.x + radius3 * Math.cos(angle),
+              y: center.y + radius3 * Math.sin(angle)
+            });
           });
 
           cy.layout({ name: 'preset' }).run();
