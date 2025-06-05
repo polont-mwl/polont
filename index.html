@@ -161,6 +161,15 @@
           ring3.removeClass('faded');
           node.connectedEdges().removeClass('faded');
 
+          // Also show edges between ring1 and ring2 nodes
+          cy.edges().forEach(edge => {
+            const src = edge.source();
+            const tgt = edge.target();
+            if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt))) {
+              edge.removeClass('faded');
+            }
+          });
+
           const radius1 = 200;
           const radius2 = 400;
           const radius3 = 600;
