@@ -82,7 +82,7 @@
 
         cy.on('tap', 'node', function(evt) {
           const node = evt.target;
-          highlightNode(node);
+          focusOnNode(node.id());
         });
 
         window.focusOnNode = function(id) {
@@ -146,28 +146,27 @@
 
           ring1.removeClass('faded');
           ring2.removeClass('faded');
-          // Hide ring3 nodes unless connected to ring2
-ring3.forEach(node => {
-  const connectedToRing2 = node.connectedEdges().some(edge =>
-    (ring2.has(edge.source()) && ring3.has(edge.target())) ||
-    (ring3.has(edge.source()) && ring2.has(edge.target()))
-  );
-  if (connectedToRing2) {
-    node.removeClass('faded');
-  } else {
-    node.addClass('faded');
-  }
-});
-          node.connectedEdges().removeClass('faded');
+          ring3.forEach(node => {
+            const connectedToRing2 = node.connectedEdges().some(edge =>
+              (ring2.has(edge.source()) && ring3.has(edge.target())) ||
+              (ring3.has(edge.source()) && ring2.has(edge.target()))
+            );
+            if (connectedToRing2) {
+              node.removeClass('faded');
+            } else {
+              node.addClass('faded');
+            }
+          });
 
+          node.connectedEdges().removeClass('faded');
           cy.edges().forEach(edge => {
-  const src = edge.source();
-  const tgt = edge.target();
-  if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt)) ||
-      (ring2.has(src) && ring3.has(tgt)) || (ring3.has(src) && ring2.has(tgt))) {
-    edge.removeClass('faded');
-  }
-});
+            const src = edge.source();
+            const tgt = edge.target();
+            if ((ring1.has(src) && ring2.has(tgt)) || (ring2.has(src) && ring1.has(tgt)) ||
+                (ring2.has(src) && ring3.has(tgt)) || (ring3.has(src) && ring2.has(tgt))) {
+              edge.removeClass('faded');
+            }
+          });
 
           const radius1 = 200;
           const radius2 = 400;
@@ -201,8 +200,6 @@ ring3.forEach(node => {
             return a.key.localeCompare(b.key);
           });
 
-          const ring2Sorted = ring2Grouped.map(item => item.node);
-
           const ring2GroupsByPrimary = {};
           ring2Grouped.forEach(item => {
             const key = item.primary;
@@ -228,49 +225,46 @@ ring3.forEach(node => {
           });
 
           const ring3Array = ring3.toArray();
-const ring2Ids = new Set(ring2.map(n => n.id()));
+          const ring2Ids = new Set(ring2.map(n => n.id()));
 
-const ring3Grouped = ring3Array.map(node => {
-  const connections = cy.edges().filter(e =>
-    (ring2Ids.has(e.source().id()) && e.target().id() === node.id()) ||
-    (ring2Ids.has(e.target().id()) && e.source().id() === node.id())
-  ).map(e => ring2Ids.has(e.source().id()) ? e.source().id() : e.target().id());
+          const ring3Grouped = ring3Array.map(node => {
+            const connections = cy.edges().filter(e =>
+              (ring2Ids.has(e.source().id()) && e.target().id() === node.id()) ||
+              (ring2Ids.has(e.target().id()) && e.source().id() === node.id())
+            ).map(e => ring2Ids.has(e.source().id()) ? e.source().id() : e.target().id());
 
-  const key = connections.sort().join(',');
-  return { node, key, primary: connections[0] || '' };
-});
+            const key = connections.sort().join(',');
+            return { node, key, primary: connections[0] || '' };
+          });
 
-ring3Grouped.sort((a, b) => {
-  if (a.primary < b.primary) return -1;
-  if (a.primary > b.primary) return 1;
-  return a.key.localeCompare(b.key);
-});
+          ring3Grouped.sort((a, b) => {
+            if (a.primary < b.primary) return -1;
+            if (a.primary > b.primary) return 1;
+            return a.key.localeCompare(b.key);
+          });
 
-const ring3GroupsByPrimary = {};
-ring3Grouped.forEach(item => {
-  const key = item.primary;
-  if (!ring3GroupsByPrimary[key]) ring3GroupsByPrimary[key] = [];
-  ring3GroupsByPrimary[key].push(item.node);
-});
+          const ring3GroupsByPrimary = {};
+          ring3Grouped.forEach(item => {
+            const key = item.primary;
+            if (!ring3GroupsByPrimary[key]) ring3GroupsByPrimary[key] = [];
+            ring3GroupsByPrimary[key].push(item.node);
+          });
 
-Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
-  const primary = cy.getElementById(primaryId);
-  if (!primary || typeof primary.position !== 'function') return;
-  const px = primary.position().x;
-  const py = primary.position().y;
-  const angle = Math.atan2(py - center.y, px - center.x);
-  const offset = (Math.PI / 180) * 6;
+          Object.entries(ring3GroupsByPrimary).forEach(([primaryId, nodes]) => {
+            const primary = cy.getElementById(primaryId);
+            if (!primary || typeof primary.position !== 'function') return;
+            const px = primary.position().x;
+            const py = primary.position().y;
+            const angle = Math.atan2(py - center.y, px - center.x);
+            const offset = (Math.PI / 180) * 6;
 
-  nodes.forEach((node, i) => {
-    const theta = angle + offset * (i - (nodes.length - 1) / 2);
-    node.position({
-      x: center.x + radius3 * Math.cos(theta),
-      y: center.y + radius3 * Math.sin(theta)
-    });
-  });
-});
-  });
-});
+            nodes.forEach((node, i) => {
+              const theta = angle + offset * (i - (nodes.length - 1) / 2);
+              node.position({
+                x: center.x + radius3 * Math.cos(theta),
+                y: center.y + radius3 * Math.sin(theta)
+              });
+            });
           });
 
           cy.layout({ name: 'preset' }).run();
