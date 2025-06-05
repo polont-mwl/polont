@@ -183,13 +183,20 @@
             });
           });
 
-          const angleStep2 = (2 * Math.PI) / Math.max(ring2.length, 1);
-          ring2.forEach((ele, i) => {
+          const ring2Sorted = ring2.sort((a, b) => {
+            const aDegree = cy.edges().filter(e => (e.source().id() === a.id() && ring1.has(e.target())) || (e.target().id() === a.id() && ring1.has(e.source()))).length;
+            const bDegree = cy.edges().filter(e => (e.source().id() === b.id() && ring1.has(e.target())) || (e.target().id() === b.id() && ring1.has(e.source()))).length;
+            return bDegree - aDegree;
+          });
+
+          const angleStep2 = (2 * Math.PI) / Math.max(ring2Sorted.length, 1);
+          ring2Sorted.forEach((ele, i) => {
             const angle = i * angleStep2;
             ele.position({
               x: center.x + radius2 * Math.cos(angle),
               y: center.y + radius2 * Math.sin(angle)
             });
+          });
           });
 
           const angleStep3 = (2 * Math.PI) / Math.max(ring3.length, 1);
