@@ -167,8 +167,7 @@
             ele.position({
               x: center.x + radius1 * Math.cos(angle),
               y: center.y + radius1 * Math.sin(angle)
-            });
-          });
+            
 
           const ring2Array = ring2.toArray();
 const ring1Ids = new Set(ring1.map(n => n.id()));
@@ -215,6 +214,7 @@ Object.entries(ring2GroupsByPrimary).forEach(([primaryId, nodes]) => {
       y: center.y + radius2 * Math.sin(theta)
     });
   });
+});
 });
 });
           });
