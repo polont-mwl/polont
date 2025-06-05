@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Political Ontology Viewer</title>
@@ -23,9 +22,7 @@
       <option value="1">1</option>
     </select>
   </div>
-  <div id="cy"></div>
-
-  <script>
+  <div id="cy"></div>  <script>
     let cy, currentNodeId, ring1, ring2, ring3, visibleRing3;
     let radius1 = 200, radius2 = 500, radius3 = 800;
 
@@ -286,13 +283,17 @@
           maxZoom: 3
         });
 
-        cy.ready(() => {
+        cy.on('tap', 'node', function(evt) {
+  const node = evt.target;
+  highlightNode(node);
+});
+
+cy.ready(() => {
           const defaultNode = cy.getElementById('individual_0');
           if (defaultNode && defaultNode.length > 0) {
             highlightNode(defaultNode);
           }
         });
       });
-  </script>
-</body>
+  </script></body>
 </html>
