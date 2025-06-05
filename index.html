@@ -202,7 +202,7 @@ ring2Grouped.forEach(item => {
 // Layout ring2 nodes in clusters near their primary
 Object.entries(ring2GroupsByPrimary).forEach(([primaryId, nodes]) => {
   const primary = cy.getElementById(primaryId);
-  if (!primary) return;
+  if (!primary || !primary.position) return;
   const px = primary.position().x;
   const py = primary.position().y;
   const angle = Math.atan2(py - center.y, px - center.x);
@@ -215,6 +215,7 @@ Object.entries(ring2GroupsByPrimary).forEach(([primaryId, nodes]) => {
       y: center.y + radius2 * Math.sin(theta)
     });
   });
+});
 });
           });
 
