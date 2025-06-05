@@ -59,7 +59,7 @@ for item in data.get('results', []):
             'label': 'contributed_to',
             'type': 'Contribution',
             'attributes': [
-                {'key': 'amount', 'value': item.get('contribution_amount')},
+                {'key': 'amount', 'value': item.get('contribution_receipt_amount')},
                 {'key': 'date', 'value': item.get('contribution_receipt_date')}
             ]
         })
