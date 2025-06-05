@@ -11,7 +11,8 @@ GRAPH_JSON_PATH = 'graph.json'  # Adjust this path as needed
 base_params = {
     'api_key': API_KEY,
     'contributor_state': 'CO',
-    'contributor_employer': 'jeffco',
+    'contributor_employer': 'Jeffco',
+    'two_year_transaction_period': 2024,
     'per_page': 1000
 }
 
@@ -35,7 +36,10 @@ while more_pages:
     response = requests.get(FEC_ENDPOINT, params=params)
     data = response.json()
 
-    for item in data.get('results', []):
+    results = data.get('results', [])
+    print(f"Page {page}: {len(results)} results")
+
+    for item in results:
         donor_id = f"individual_{item['contributor_name'].replace(' ', '_')}"
         cmte_id = f"committee_{item['committee']['name'].replace(' ', '_')}"
 
