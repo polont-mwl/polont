@@ -199,7 +199,6 @@ def fetch_contributions():
                 'per_page': 100,
                 'page': page,
                 'contributor_state': 'CO',
-                'contributor_employer': 'jeffco',
             }
             url = CONTRIBUTION_ENDPOINT + '?' + urlencode(params)
             debug(f"Requesting contribution page {page} for {period}")
