@@ -17,3 +17,7 @@ python3 FECdata.fetch.transform.py
 ```
 
 The script reads `graph.json` (creating it if missing) and updates it with nodes and edges from candidates, committees and contributions.
+
+API calls are retried automatically when rate limited. The tool waits up to three
+times for 60 seconds each and then performs one final retry after waiting an
+hour before giving up.

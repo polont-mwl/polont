@@ -22,9 +22,10 @@ CONTRIBUTION_ENDPOINT = 'https://api.open.fec.gov/v1/schedules/schedule_a'
 CANDIDATE_ENDPOINT = 'https://api.open.fec.gov/v1/candidates'
 COMMITTEE_ENDPOINT = 'https://api.open.fec.gov/v1/committees'
 
-# Delay and retry count when hitting API rate limits
-RETRY_WAIT = 60  # seconds
-MAX_RETRIES = 3
+# Short and long retry delays when hitting API rate limits
+RETRY_WAIT_SHORT = 60        # wait 60 seconds on first few retries
+RETRY_WAIT_LONG = 60 * 60    # wait 60 minutes on the final retry
+MAX_SHORT_RETRIES = 3        # number of short retries
 
 GRAPH_JSON_PATH = 'graph.json'
 
@@ -48,6 +49,25 @@ def log_error(url, resp):
     print(f"Error {resp.status_code} fetching {url}")
 
 
+def get_with_retry(url: str) -> requests.Response:
+    """Request a URL and handle FEC API rate limiting."""
+    resp = requests.get(url)
+    retries = 0
+    while resp.status_code == 429:
+        # Decide how long to wait based on how many retries we've done
+        if retries < MAX_SHORT_RETRIES:
+            delay = RETRY_WAIT_SHORT
+        elif retries == MAX_SHORT_RETRIES:
+            delay = RETRY_WAIT_LONG
+        else:
+            break
+        debug(f"Rate limited, waiting {delay} seconds before retry {retries + 1}")
+        time.sleep(delay)
+        resp = requests.get(url)
+        retries += 1
+    return resp
+
+
 def fetch_candidates():
     """Fetch candidate nodes from the FEC API."""
     print("Fetching candidate data...")
@@ -63,13 +83,7 @@ def fetch_candidates():
             }
             url = CANDIDATE_ENDPOINT + '?' + urlencode(params)
             debug(f"Requesting candidate page {page} for {year}")
-            resp = requests.get(url)
-            retry = 0
-            # Retry when the API rate limits the request
-            while resp.status_code == 429 and retry < MAX_RETRIES:
-                time.sleep(RETRY_WAIT)
-                resp = requests.get(url)
-                retry += 1
+            resp = get_with_retry(url)
             if resp.status_code != 200:
                 log_error(url, resp)
                 break
@@ -118,13 +132,7 @@ def fetch_committees():
             }
             url = COMMITTEE_ENDPOINT + '?' + urlencode(params)
             debug(f"Requesting committee page {page} for {cycle}")
-            resp = requests.get(url)
-            retry = 0
-            # Retry if the API rate limit is hit
-            while resp.status_code == 429 and retry < MAX_RETRIES:
-                time.sleep(RETRY_WAIT)
-                resp = requests.get(url)
-                retry += 1
+            resp = get_with_retry(url)
             if resp.status_code != 200:
                 log_error(url, resp)
                 break
@@ -202,13 +210,7 @@ def fetch_contributions():
             }
             url = CONTRIBUTION_ENDPOINT + '?' + urlencode(params)
             debug(f"Requesting contribution page {page} for {period}")
-            resp = requests.get(url)
-            retry = 0
-            # Retry the request if we hit the rate limit
-            while resp.status_code == 429 and retry < MAX_RETRIES:
-                time.sleep(RETRY_WAIT)
-                resp = requests.get(url)
-                retry += 1
+            resp = get_with_retry(url)
             if resp.status_code != 200:
                 log_error(url, resp)
                 break
