@@ -13,7 +13,7 @@ base_params = {
     'api_key': API_KEY,
     'contributor_state': 'CO',
     'two_year_transaction_period': 2024,
-    'per_page': 1000
+    'per_page': 100
 }
 
 # Load existing graph data or initialize new structure
