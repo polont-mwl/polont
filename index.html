@@ -226,9 +226,13 @@ if (depth === 1) ring2.addClass('hidden');
       .then(res => res.json())
       .then(graphData => {
         startId = graphData.nodes[0]?.id;
+        const elements = [
+          ...graphData.nodes.map(n => ({ data: n })),
+          ...graphData.edges.map(e => ({ data: e }))
+        ];
         cy = cytoscape({
           container: document.getElementById('cy'),
-          elements: [...graphData.nodes, ...graphData.edges],
+          elements,
           style: [
             {
               selector: 'node',
