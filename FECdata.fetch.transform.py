@@ -2,6 +2,7 @@ import requests
 import json
 import os
 import hashlib
+import time  # Used for retry delays
 from urllib.parse import urlencode
 
 # Configuration values for the FEC API
@@ -11,6 +12,10 @@ API_KEY = os.getenv('FEC_API_KEY', DEFAULT_API_KEY)
 CONTRIBUTION_ENDPOINT = 'https://api.open.fec.gov/v1/schedules/schedule_a'
 CANDIDATE_ENDPOINT = 'https://api.open.fec.gov/v1/candidates'
 COMMITTEE_ENDPOINT = 'https://api.open.fec.gov/v1/committees'
+
+# Delay and retry count when hitting API rate limits
+RETRY_WAIT = 60  # seconds
+MAX_RETRIES = 3
 
 GRAPH_JSON_PATH = 'graph.json'
 
@@ -46,6 +51,12 @@ def fetch_candidates():
             }
             url = CANDIDATE_ENDPOINT + '?' + urlencode(params)
             resp = requests.get(url)
+            retry = 0
+            # Retry when the API rate limits the request
+            while resp.status_code == 429 and retry < MAX_RETRIES:
+                time.sleep(RETRY_WAIT)
+                resp = requests.get(url)
+                retry += 1
             if resp.status_code != 200:
                 log_error(url, resp)
                 break
@@ -90,6 +101,12 @@ def fetch_committees():
             }
             url = COMMITTEE_ENDPOINT + '?' + urlencode(params)
             resp = requests.get(url)
+            retry = 0
+            # Retry if the API rate limit is hit
+            while resp.status_code == 429 and retry < MAX_RETRIES:
+                time.sleep(RETRY_WAIT)
+                resp = requests.get(url)
+                retry += 1
             if resp.status_code != 200:
                 log_error(url, resp)
                 break
@@ -164,6 +181,12 @@ def fetch_contributions():
             }
             url = CONTRIBUTION_ENDPOINT + '?' + urlencode(params)
             resp = requests.get(url)
+            retry = 0
+            # Retry the request if we hit the rate limit
+            while resp.status_code == 429 and retry < MAX_RETRIES:
+                time.sleep(RETRY_WAIT)
+                resp = requests.get(url)
+                retry += 1
             if resp.status_code != 200:
                 log_error(url, resp)
                 break
