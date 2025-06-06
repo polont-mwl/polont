@@ -114,6 +114,18 @@ for is_individual in (True, False):
                     })
                     existing_node_ids.add(cand_node_id)
 
+                if recipient_cmte_id:
+                    edge_key = (recip_id, cand_node_id, 'supports_candidate')
+                    if edge_key not in existing_edges:
+                        graph['edges'].append({
+                            'source': recip_id,
+                            'target': cand_node_id,
+                            'label': 'supports_candidate',
+                            'type': 'Support',
+                            'attributes': []
+                        })
+                        existing_edges.add(edge_key)
+
             if recipient_cmte_id and is_individual:
                 edge_key = (donor_id, recip_id, 'contributed_to')
                 if edge_key not in existing_edges:
