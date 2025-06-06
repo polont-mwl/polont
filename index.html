@@ -21,6 +21,11 @@
       <option value="2">2</option>
       <option value="1">1</option>
     </select>
+    <label for="dataSource">Data:</label>
+    <select id="dataSource" onchange="updateDataSource()">
+      <option value="fec" selected>FEC</option>
+      <option value="tracer">TRACER</option>
+    </select>
   </div>
   <div id="cy"></div>  <script>
     let cy, currentNodeId, ring1, ring2, ring3, visibleRing3;
@@ -222,17 +227,41 @@ if (depth === 1) ring2.addClass('hidden');
       }
     }
 
-    fetch('graph.json')
-      .then(res => res.json())
-      .then(graphData => {
-        startId = graphData.nodes[0]?.id;
-        const elements = [
-          ...graphData.nodes.map(n => ({ data: n })),
-          ...graphData.edges.map(e => ({ data: e }))
-        ];
-        cy = cytoscape({
-          container: document.getElementById('cy'),
-          elements,
+    let baseGraph;
+
+    function loadGraph() {
+      // Fetch the graph file once and filter based on the selected source
+      return fetch('graph.json')
+        .then(res => res.json())
+        .then(data => {
+          baseGraph = data;
+          updateDataSource();
+        });
+    }
+
+    function getFilteredGraph(source) {
+      // Split FEC and TRACER nodes using the optional source attribute
+      const nodes = baseGraph.nodes.filter(n => {
+        const src = (n.attributes || []).find(a => a.key === 'source')?.value;
+        return source === 'tracer' ? src === 'TRACER' : src !== 'TRACER';
+      });
+      const ids = new Set(nodes.map(n => n.id));
+      const edges = baseGraph.edges.filter(e => ids.has(e.source) && ids.has(e.target));
+      return { nodes, edges };
+    }
+
+    function updateDataSource() {
+      const source = document.getElementById('dataSource').value;
+      const graphData = getFilteredGraph(source);
+      startId = graphData.nodes[0]?.id;
+      const elements = [
+        ...graphData.nodes.map(n => ({ data: n })),
+        ...graphData.edges.map(e => ({ data: e }))
+      ];
+      if (cy) cy.destroy();
+      cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements,
           style: [
             {
               selector: 'node',
@@ -313,6 +342,7 @@ if (depth === 1) ring2.addClass('hidden');
             }
           }
         });
-      });
-  </script></body>
+        });
+      loadGraph();
+    </script></body>
 </html>
