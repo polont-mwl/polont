@@ -36,20 +36,31 @@ while more_pages:
     full_url = FEC_ENDPOINT + '?' + urlencode(params)
     print(f"Requesting: {full_url}")
     response = requests.get(full_url)
-    data = response.json()
+
+    try:
+        data = response.json()
+    except json.JSONDecodeError:
+        print("Error decoding JSON response.")
+        break
 
     results = data.get('results', [])
     print(f"Page {page}: {len(results)} results")
 
     for item in results:
-        donor_id = f"individual_{item['contributor_name'].replace(' ', '_')}"
-        cmte_id = f"committee_{item['committee']['name'].replace(' ', '_')}"
+        contributor_name = item.get('contributor_name')
+        committee_name = item.get('committee', {}).get('name')
+
+        if not contributor_name or not committee_name:
+            continue  # skip incomplete entries
+
+        donor_id = f"individual_{contributor_name.replace(' ', '_')}"
+        cmte_id = f"committee_{committee_name.replace(' ', '_')}"
 
         # Donor node
         if donor_id not in existing_node_ids:
             graph['nodes'].append({
                 'id': donor_id,
-                'label': item['contributor_name'],
+                'label': contributor_name,
                 'type': 'Individual',
                 'attributes': [
                     {'key': 'city', 'value': item.get('contributor_city')},
@@ -63,7 +74,7 @@ while more_pages:
         if cmte_id not in existing_node_ids:
             graph['nodes'].append({
                 'id': cmte_id,
-                'label': item['committee']['name'],
+                'label': committee_name,
                 'type': 'Campaign',
                 'attributes': [
                     {'key': 'committee_id', 'value': item.get('committee_id')}
