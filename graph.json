@@ -1,0 +1,3454 @@
+{
+  "nodes": [
+    {
+      "id": "individual_KEMM,_JOHN_A.",
+      "label": "KEMM, JOHN A.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00718866",
+      "label": "JON OSSOFF FOR SENATE",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00718866"
+        }
+      ]
+    },
+    {
+      "id": "individual_HAUGE,_WADE",
+      "label": "HAUGE, WADE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "PARKER"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HOFFMAN,_RICHARD",
+      "label": "HOFFMAN, RICHARD",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BROOMFIELD"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_EVANS,_CAROL_A.",
+      "label": "EVANS, CAROL A.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LAKEWOOD"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_UNDERHILL,_JOANNE",
+      "label": "UNDERHILL, JOANNE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "GREENWOOD VILLAGE"
+        },
+        {
+          "key": "employer",
+          "value": "UNDERHILL LAW PC"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_ZINGELMAN,_DONNA",
+      "label": "ZINGELMAN, DONNA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LAKEWOOD"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HALCOMB,_CATHERINE",
+      "label": "HALCOMB, CATHERINE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BEULAH"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_PILKENTON,_WILLIAM",
+      "label": "PILKENTON, WILLIAM",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "GRAND JCT"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_MANN,_KENDELL_L.",
+      "label": "MANN, KENDELL L.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "GASTROENTEROLOGY ASSOCIATES OF COLORAD"
+        },
+        {
+          "key": "occupation",
+          "value": "GASTROENTEROLOGIST"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00423228",
+      "label": "AMERICAN GASTROENTEROLOGICAL ASSOCIATION INC. PAC",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00423228"
+        }
+      ]
+    },
+    {
+      "id": "individual_LONG,_LAURIE",
+      "label": "LONG, LAURIE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00608695",
+      "label": "MIKE JOHNSON FOR LOUISIANA",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00608695"
+        }
+      ]
+    },
+    {
+      "id": "individual_JOHNSON,_KAY_M._MRS.",
+      "label": "JOHNSON, KAY M. MRS.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "FORT MORGAN"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HARMAN,_HELEN",
+      "label": "HARMAN, HELEN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "FORT COLLINS"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HALLOWITZ,_ROBERT",
+      "label": "HALLOWITZ, ROBERT",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "FORT COLLINS"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_MCCUTCHEN,_WILLIAM",
+      "label": "MCCUTCHEN, WILLIAM",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "VAIL"
+        },
+        {
+          "key": "employer",
+          "value": "PMG"
+        },
+        {
+          "key": "occupation",
+          "value": "MEDIA EXCUTIVE"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00014498",
+      "label": "REPUBLICAN PARTY OF IOWA",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00014498"
+        }
+      ]
+    },
+    {
+      "id": "individual_WEST,_WILLIAM",
+      "label": "WEST, WILLIAM",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LAKEWOOD"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_KUNIANSKY,_LAURA",
+      "label": "KUNIANSKY, LAURA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DURANGO"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_KING,_DEANNA",
+      "label": "KING, DEANNA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "HIGH LANDS RANCH"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_LIVINGSTON,_VICTORIA",
+      "label": "LIVINGSTON, VICTORIA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "CENTENNIAL"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_KELLEY,_KEVIN",
+      "label": "KELLEY, KEVIN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00266585",
+      "label": "GREENBERG TRAURIG, P.A. PAC",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00266585"
+        }
+      ]
+    },
+    {
+      "id": "individual_AUSTIN,_ANDREA",
+      "label": "AUSTIN, ANDREA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_SMITH,_SKIP",
+      "label": "SMITH, SKIP",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_BARR,_ANDREW",
+      "label": "BARR, ANDREW",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_WELLS,_MARTINE",
+      "label": "WELLS, MARTINE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_DUFFY,_BRIAN",
+      "label": "DUFFY, BRIAN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_PALMER,_DAVID",
+      "label": "PALMER, DAVID",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_OBERFELD,_NEIL",
+      "label": "OBERFELD, NEIL",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_EID,_TROY_A",
+      "label": "EID, TROY A",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREENBERG TRAURIG"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_STEWART,_CHARMAINE_MRS.",
+      "label": "STEWART, CHARMAINE MRS.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "GRAND JUNCTION"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00003418",
+      "label": "REPUBLICAN NATIONAL COMMITTEE",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00003418"
+        }
+      ]
+    },
+    {
+      "id": "individual_SACCANY,_RICHARD_MR.",
+      "label": "SACCANY, RICHARD MR.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "ENGLEWOOD"
+        },
+        {
+          "key": "employer",
+          "value": "STANTEC CONSULTING"
+        },
+        {
+          "key": "occupation",
+          "value": "MINING ENGINEER"
+        }
+      ]
+    },
+    {
+      "id": "individual_RUSH,_WILLIAM_H._MR.",
+      "label": "RUSH, WILLIAM H. MR.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "THORNTON"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_OLIVETT,_SHAWN",
+      "label": "OLIVETT, SHAWN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "CONIFER"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_NEWBOLD,_LYNN",
+      "label": "NEWBOLD, LYNN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "WHEAT RIDGE"
+        },
+        {
+          "key": "employer",
+          "value": "PANORAMA"
+        },
+        {
+          "key": "occupation",
+          "value": "CLINICAL"
+        }
+      ]
+    },
+    {
+      "id": "individual_MACKEY,_JUDITH_R.",
+      "label": "MACKEY, JUDITH R.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "SELF-EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "SELF-EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_KUDELKA,_DIANNA_MRS.",
+      "label": "KUDELKA, DIANNA MRS.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "PARKER"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HALE,_JAMES_D._MR.",
+      "label": "HALE, JAMES D. MR.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LONGMONT"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_ENSIGN,_WILL",
+      "label": "ENSIGN, WILL",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_CROSSLEY,_LINDA_L._MS.",
+      "label": "CROSSLEY, LINDA L. MS.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "WESTCLIFFE"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_BUDREAU,_GORDON_M._MR.",
+      "label": "BUDREAU, GORDON M. MR.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "SMITH BARNEY"
+        },
+        {
+          "key": "occupation",
+          "value": "FINANCIAL CONSULTANT"
+        }
+      ]
+    },
+    {
+      "id": "individual_BIDDISON,_MARK",
+      "label": "BIDDISON, MARK",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "SUPERIOR"
+        },
+        {
+          "key": "employer",
+          "value": "SELF-EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_BAGLEY,_ROBERT",
+      "label": "BAGLEY, ROBERT",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "JOHNSTOWN"
+        },
+        {
+          "key": "employer",
+          "value": "CQV ENGINEER"
+        },
+        {
+          "key": "occupation",
+          "value": "CAI"
+        }
+      ]
+    },
+    {
+      "id": "individual_SHERRON,_ALICE",
+      "label": "SHERRON, ALICE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BUENA VISTA"
+        },
+        {
+          "key": "employer",
+          "value": "SELF-EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "SELF-EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_ROBINSON,_LISA_W._MRS.",
+      "label": "ROBINSON, LISA W. MRS.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "RE MAX ADVANTAGE"
+        },
+        {
+          "key": "occupation",
+          "value": "REALTOR"
+        }
+      ]
+    },
+    {
+      "id": "individual_NAGEL,_RALPH_J._MR.",
+      "label": "NAGEL, RALPH J. MR.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_MONTEZON,_JOAN",
+      "label": "MONTEZON, JOAN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LITTLETON"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_JACOBS,_RAYMOND_G.",
+      "label": "JACOBS, RAYMOND G.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "PALMER LAKE"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_JACOBSON,_MERRILL_REX_MR.",
+      "label": "JACOBSON, MERRILL REX MR.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "CASTLE ROCK"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HUGH,_GARY_D._MR.",
+      "label": "HUGH, GARY D. MR.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "THORNTON"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HOLLAND,_JOHANNA_B._MS.",
+      "label": "HOLLAND, JOHANNA B. MS.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LITTLETON"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_FENWICK,_EDWIN_A.",
+      "label": "FENWICK, EDWIN A.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "WALDEN"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_EARLEY,_STEVE_MR.",
+      "label": "EARLEY, STEVE MR.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LITTLETON"
+        },
+        {
+          "key": "employer",
+          "value": "EARLEY ENTERPRISES"
+        },
+        {
+          "key": "occupation",
+          "value": "SALES"
+        }
+      ]
+    },
+    {
+      "id": "individual_CURE,_MICHELLE_L._MS.",
+      "label": "CURE, MICHELLE L. MS.",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "WINDSOR"
+        },
+        {
+          "key": "employer",
+          "value": "RETIRED"
+        },
+        {
+          "key": "occupation",
+          "value": "RETIRED"
+        }
+      ]
+    },
+    {
+      "id": "individual_PICKHARDT,_JULIE",
+      "label": "PICKHARDT, JULIE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BOULDER"
+        },
+        {
+          "key": "employer",
+          "value": "VMWARE"
+        },
+        {
+          "key": "occupation",
+          "value": "SOFTWARE ENGINEER"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00019331",
+      "label": "DEMOCRATIC PARTY OF WISCONSIN FEDERAL",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00019331"
+        }
+      ]
+    },
+    {
+      "id": "individual_APPELBAUM,_LAURA",
+      "label": "APPELBAUM, LAURA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BOULDER"
+        },
+        {
+          "key": "employer",
+          "value": "FIRSTPIC"
+        },
+        {
+          "key": "occupation",
+          "value": "RESEARCH ANALYST"
+        }
+      ]
+    },
+    {
+      "id": "individual_MACRAE,_ELLEN",
+      "label": "MACRAE, ELLEN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LONGMONT"
+        },
+        {
+          "key": "employer",
+          "value": "T J LAHEY SCHOOL"
+        },
+        {
+          "key": "occupation",
+          "value": "TEACHING ASSISTANT"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00744946",
+      "label": "HARRIS VICTORY FUND",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00744946"
+        }
+      ]
+    },
+    {
+      "id": "individual_GRAINGER,_CINDY",
+      "label": "GRAINGER, CINDY",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "ENGLEWOOD"
+        },
+        {
+          "key": "employer",
+          "value": "DRCOG/AAA/COMMUNITY RESOURCES"
+        },
+        {
+          "key": "occupation",
+          "value": "ADMIN ASST"
+        }
+      ]
+    },
+    {
+      "id": "individual_KRESTAN,_SANDY",
+      "label": "KRESTAN, SANDY",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "CRESTONE"
+        },
+        {
+          "key": "employer",
+          "value": "SELF"
+        },
+        {
+          "key": "occupation",
+          "value": "ACUPUNCTURE"
+        }
+      ]
+    },
+    {
+      "id": "individual_LAWRENCE,_NANCY",
+      "label": "LAWRENCE, NANCY",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "INNOVATIVE LEARNING CONCEPTS INC"
+        },
+        {
+          "key": "occupation",
+          "value": "BID COORDINATOR"
+        }
+      ]
+    },
+    {
+      "id": "individual_BEARD,_BRIAN",
+      "label": "BEARD, BRIAN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "FORT COLLINS"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_CHADWICK,_ANGELA",
+      "label": "CHADWICK, ANGELA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LITTLETON"
+        },
+        {
+          "key": "employer",
+          "value": "JLL"
+        },
+        {
+          "key": "occupation",
+          "value": "CORPORATE REAL ESTATE"
+        }
+      ]
+    },
+    {
+      "id": "individual_DUKE,_BRIAN",
+      "label": "DUKE, BRIAN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "SEMNOX"
+        },
+        {
+          "key": "occupation",
+          "value": "SALES"
+        }
+      ]
+    },
+    {
+      "id": "individual_MCDERMOTT,_DENNIS",
+      "label": "MCDERMOTT, DENNIS",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "SUPERIOR"
+        },
+        {
+          "key": "employer",
+          "value": "BOULDER COUNTY"
+        },
+        {
+          "key": "occupation",
+          "value": "PROGRAMMER"
+        }
+      ]
+    },
+    {
+      "id": "individual_FELLOWS,_MICHAEL",
+      "label": "FELLOWS, MICHAEL",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BOULDER"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_POINSATTE,_FRANCOISE",
+      "label": "POINSATTE, FRANCOISE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BOULDER"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_ROZAKLIS,_LOUIS",
+      "label": "ROZAKLIS, LOUIS",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BOULDER"
+        },
+        {
+          "key": "employer",
+          "value": "SELF"
+        },
+        {
+          "key": "occupation",
+          "value": "WATER ENGINEER"
+        }
+      ]
+    },
+    {
+      "id": "individual_SMITH-STILLSON,_KATHY",
+      "label": "SMITH-STILLSON, KATHY",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "FORT COLLINS"
+        },
+        {
+          "key": "employer",
+          "value": "COLORADO CHRISTIAN UNIVERSITY"
+        },
+        {
+          "key": "occupation",
+          "value": "RN EDUCATOR"
+        }
+      ]
+    },
+    {
+      "id": "individual_ANAYA,_STEPHEN_JAMES",
+      "label": "ANAYA, STEPHEN JAMES",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BOULDER"
+        },
+        {
+          "key": "employer",
+          "value": "UNIVERSITY OF COLORADO LAW SCHOOL"
+        },
+        {
+          "key": "occupation",
+          "value": "LAW PROFESSOR"
+        }
+      ]
+    },
+    {
+      "id": "individual_NIELSEN,_JOYCE",
+      "label": "NIELSEN, JOYCE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPGS"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_TIHONOVICH,_DEBBIE",
+      "label": "TIHONOVICH, DEBBIE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "PUEBLO"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_WARD,_SEAN",
+      "label": "WARD, SEAN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "DEMOCRATIC PARTY OF NEW MEXICO"
+        },
+        {
+          "key": "occupation",
+          "value": "EXECUTIVE DIRECTOR"
+        }
+      ]
+    },
+    {
+      "id": "individual_COLE,_LAURIE",
+      "label": "COLE, LAURIE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "AURORA"
+        },
+        {
+          "key": "employer",
+          "value": "RIGGSABNEY NEAL TURPIN ETC"
+        },
+        {
+          "key": "occupation",
+          "value": "LAWYER"
+        }
+      ]
+    },
+    {
+      "id": "individual_SAULL,_DAVID",
+      "label": "SAULL, DAVID",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LAKEWOOD"
+        },
+        {
+          "key": "employer",
+          "value": "SELF"
+        },
+        {
+          "key": "occupation",
+          "value": "MUSICAL INSTRUMENT REPAIR"
+        }
+      ]
+    },
+    {
+      "id": "individual_BARTON,_MARY",
+      "label": "BARTON, MARY",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "HIGHLANDS RANCH"
+        },
+        {
+          "key": "employer",
+          "value": null
+        },
+        {
+          "key": "occupation",
+          "value": "CSU CHICO"
+        }
+      ]
+    },
+    {
+      "id": "individual_THISTLETHWAITE,_SUSAN",
+      "label": "THISTLETHWAITE, SUSAN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "EDWARDS"
+        },
+        {
+          "key": "employer",
+          "value": "CHICAGO THEOLOGICAL SEMINARY"
+        },
+        {
+          "key": "occupation",
+          "value": "PROFESSOR"
+        }
+      ]
+    },
+    {
+      "id": "individual_LILLICH,_MONICA",
+      "label": "LILLICH, MONICA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_ROSAS_GONZALEZ,_MARIA",
+      "label": "ROSAS GONZALEZ, MARIA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "SHERATON DENVER DOWNTOWN"
+        },
+        {
+          "key": "occupation",
+          "value": "SECURITY OFFICER"
+        }
+      ]
+    },
+    {
+      "id": "individual_NICHOLS,_PAMELA",
+      "label": "NICHOLS, PAMELA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "GOLDEN"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_GARDNER,_CASEY",
+      "label": "GARDNER, CASEY",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "JEFFCO PUBLIC SCHOOLS"
+        },
+        {
+          "key": "occupation",
+          "value": "SCHOOL SOCIAL WORKER"
+        }
+      ]
+    },
+    {
+      "id": "individual_MARICLE,_PAUL",
+      "label": "MARICLE, PAUL",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "LANTZ LAW GROUP"
+        },
+        {
+          "key": "occupation",
+          "value": "LAWYER"
+        }
+      ]
+    },
+    {
+      "id": "individual_KNEZEVICH,_VALENTINE",
+      "label": "KNEZEVICH, VALENTINE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "ERIE"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_DEWITT,_KATE",
+      "label": "DEWITT, KATE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "LOUISVILLE"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_LOCKWOOD,_PAMELA",
+      "label": "LOCKWOOD, PAMELA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "FORT COLLINS"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HYUN,_TONY",
+      "label": "HYUN, TONY",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "ROYAL CYBER"
+        },
+        {
+          "key": "occupation",
+          "value": "DIRECTOR"
+        }
+      ]
+    },
+    {
+      "id": "individual_BLOXOM,_AMANDA",
+      "label": "BLOXOM, AMANDA",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "GLEN HAVEN"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_TUREK,_MELODYE",
+      "label": "TUREK, MELODYE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_CAYLOR,_VIVIAN",
+      "label": "CAYLOR, VIVIAN",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DOLORES"
+        },
+        {
+          "key": "employer",
+          "value": "DELAWARE NORTH CORPORATION"
+        },
+        {
+          "key": "occupation",
+          "value": "ACCOUNTANT"
+        }
+      ]
+    },
+    {
+      "id": "individual_QUINLAN,_DANIEL",
+      "label": "QUINLAN, DANIEL",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BOULDER"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_KING,_PATRICK",
+      "label": "KING, PATRICK",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "CARBONDALE"
+        },
+        {
+          "key": "employer",
+          "value": "PROTECT OUR WINTERS"
+        },
+        {
+          "key": "occupation",
+          "value": "STRATEGIC PARTNERSHIPS DIRECTOR"
+        }
+      ]
+    },
+    {
+      "id": "individual_HARRIS,_MARY",
+      "label": "HARRIS, MARY",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "SNOWMASS"
+        },
+        {
+          "key": "employer",
+          "value": "ASPEN MEDICAL CARE"
+        },
+        {
+          "key": "occupation",
+          "value": "PEDIATRICIAN"
+        }
+      ]
+    },
+    {
+      "id": "individual_SILVER,_ANNE",
+      "label": "SILVER, ANNE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "CRESTONE"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_WOULLARD,_ADAM",
+      "label": "WOULLARD, ADAM",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "COLORADO SPRINGS"
+        },
+        {
+          "key": "employer",
+          "value": "VML"
+        },
+        {
+          "key": "occupation",
+          "value": "PR"
+        }
+      ]
+    },
+    {
+      "id": "individual_SPRACKLEN,_TANNER",
+      "label": "SPRACKLEN, TANNER",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "BERTHOUD"
+        },
+        {
+          "key": "employer",
+          "value": "CITY OF GREELEY"
+        },
+        {
+          "key": "occupation",
+          "value": "ATTORNEY"
+        }
+      ]
+    },
+    {
+      "id": "individual_FOUST,_SCOTT",
+      "label": "FOUST, SCOTT",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "GREAT-WEST FINANCIAL"
+        },
+        {
+          "key": "occupation",
+          "value": "PRODUCT DEVELOPMENT"
+        }
+      ]
+    },
+    {
+      "id": "individual_DAVIS_ALPERT,_LAUREL",
+      "label": "DAVIS ALPERT, LAUREL",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_HAMMES,_DEBBIE",
+      "label": "HAMMES, DEBBIE",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DENVER"
+        },
+        {
+          "key": "employer",
+          "value": "NOT EMPLOYED"
+        },
+        {
+          "key": "occupation",
+          "value": "NOT EMPLOYED"
+        }
+      ]
+    },
+    {
+      "id": "individual_STETZ,_MARK",
+      "label": "STETZ, MARK",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "DURANGO"
+        },
+        {
+          "key": "employer",
+          "value": "STETZ CONSULTING LLC"
+        },
+        {
+          "key": "occupation",
+          "value": "ENGINEER"
+        }
+      ]
+    },
+    {
+      "id": "individual_MAYER,_DONALD",
+      "label": "MAYER, DONALD",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "CRESTED BUTTE"
+        },
+        {
+          "key": "employer",
+          "value": "STEPPING STONES CHILDREN'S CENTER"
+        },
+        {
+          "key": "occupation",
+          "value": "TEACHER"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "individual_KEMM,_JOHN_A.",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HAUGE,_WADE",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 5.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HOFFMAN,_RICHARD",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_EVANS,_CAROL_A.",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 35.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_UNDERHILL,_JOANNE",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 60.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ZINGELMAN,_DONNA",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HALCOMB,_CATHERINE",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_PILKENTON,_WILLIAM",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MANN,_KENDELL_L.",
+      "target": "committee_C00423228",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 250.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LONG,_LAURIE",
+      "target": "committee_C00608695",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 52.05
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_JOHNSON,_KAY_M._MRS.",
+      "target": "committee_C00608695",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 20.24
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HARMAN,_HELEN",
+      "target": "committee_C00608695",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": -20.04
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HALLOWITZ,_ROBERT",
+      "target": "committee_C00608695",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": -0.25
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MCCUTCHEN,_WILLIAM",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 0.95
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_WEST,_WILLIAM",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 19.24
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KUNIANSKY,_LAURA",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 4.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KING,_DEANNA",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 1.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LIVINGSTON,_VICTORIA",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 0.95
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KELLEY,_KEVIN",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 249.99
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_AUSTIN,_ANDREA",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 93.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SMITH,_SKIP",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 93.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BARR,_ANDREW",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 93.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_WELLS,_MARTINE",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 187.5
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_DUFFY,_BRIAN",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 272.76
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_PALMER,_DAVID",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 272.76
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_OBERFELD,_NEIL",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 750.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_EID,_TROY_A",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 2000.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_STEWART,_CHARMAINE_MRS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 26.03
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SACCANY,_RICHARD_MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_RUSH,_WILLIAM_H._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 30.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_OLIVETT,_SHAWN",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 24.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_NEWBOLD,_LYNN",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 9.5
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MACKEY,_JUDITH_R.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KUDELKA,_DIANNA_MRS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HALE,_JAMES_D._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ENSIGN,_WILL",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 104.1
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_CROSSLEY,_LINDA_L._MS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 11.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BUDREAU,_GORDON_M._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BIDDISON,_MARK",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 2.5
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BAGLEY,_ROBERT",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 45.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SHERRON,_ALICE",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ROBINSON,_LISA_W._MRS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_NAGEL,_RALPH_J._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 1000.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MONTEZON,_JOAN",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 35.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_JACOBS,_RAYMOND_G.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 220.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_JACOBSON,_MERRILL_REX_MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 35.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HUGH,_GARY_D._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HOLLAND,_JOHANNA_B._MS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_FENWICK,_EDWIN_A.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 200.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_EARLEY,_STEVE_MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 35.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_CURE,_MICHELLE_L._MS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_PICKHARDT,_JULIE",
+      "target": "committee_C00019331",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_APPELBAUM,_LAURA",
+      "target": "committee_C00019331",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MACRAE,_ELLEN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_GRAINGER,_CINDY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 5.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KRESTAN,_SANDY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 6.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LAWRENCE,_NANCY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 15.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BEARD,_BRIAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_CHADWICK,_ANGELA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_DUKE,_BRIAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MCDERMOTT,_DENNIS",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_FELLOWS,_MICHAEL",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_POINSATTE,_FRANCOISE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 75.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ROZAKLIS,_LOUIS",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SMITH-STILLSON,_KATHY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ANAYA,_STEPHEN_JAMES",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_NIELSEN,_JOYCE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_TIHONOVICH,_DEBBIE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_WARD,_SEAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_COLE,_LAURIE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SAULL,_DAVID",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 20.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BARTON,_MARY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_THISTLETHWAITE,_SUSAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LILLICH,_MONICA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ROSAS_GONZALEZ,_MARIA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_NICHOLS,_PAMELA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_GARDNER,_CASEY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MARICLE,_PAUL",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KNEZEVICH,_VALENTINE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_DEWITT,_KATE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 20.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LOCKWOOD,_PAMELA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HYUN,_TONY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 12.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BLOXOM,_AMANDA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_TUREK,_MELODYE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 6.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_CAYLOR,_VIVIAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_QUINLAN,_DANIEL",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KING,_PATRICK",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HARRIS,_MARY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SILVER,_ANNE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 1000.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_WOULLARD,_ADAM",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 5.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SPRACKLEN,_TANNER",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 34.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_FOUST,_SCOTT",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_DAVIS_ALPERT,_LAUREL",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 47.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HAMMES,_DEBBIE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_STETZ,_MARK",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MAYER,_DONALD",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    }
+  ]
+}
