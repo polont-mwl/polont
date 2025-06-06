@@ -13,13 +13,12 @@ COMMITTEE_ENDPOINT = 'https://api.open.fec.gov/v1/committees'
 
 GRAPH_JSON_PATH = 'graph.json'  # Adjust this path as needed
 
-
-
-# Load existing graph data or initialize new structure
-if os.path.exists(GRAPH_JSON_PATH) and os.path.getsize(GRAPH_JSON_PATH) > 0:
+# Try loading an existing graph from disk
+try:
     with open(GRAPH_JSON_PATH, 'r') as f:
-        graph = json.load(f)
-else:
+        graph = json.load(f)  # stored nodes and edges
+except (json.JSONDecodeError, OSError):
+    # Start with an empty graph if file is missing or invalid
     graph = {'nodes': [], 'edges': []}
 
 # Use dicts for fast lookup to avoid duplicates
