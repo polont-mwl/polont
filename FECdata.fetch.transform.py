@@ -5,6 +5,15 @@ import hashlib
 import time  # Used for retry delays
 from urllib.parse import urlencode
 
+# Debug flag toggled through environment variable
+DEBUG = os.getenv('DEBUG', '1') == '1'
+
+
+def debug(msg: str) -> None:
+    """Print debug messages when DEBUG mode is on."""
+    if DEBUG:
+        print(f"[DEBUG] {msg}")
+
 # Configuration values for the FEC API
 DEFAULT_API_KEY = 'h3pdYZNm4O69cZIeogPkzx0keh7tBqkoPphTVntC'
 API_KEY = os.getenv('FEC_API_KEY', DEFAULT_API_KEY)
@@ -23,9 +32,11 @@ GRAPH_JSON_PATH = 'graph.json'
 try:
     with open(GRAPH_JSON_PATH, 'r') as f:
         graph = json.load(f)
+        debug(f"Loaded graph with {len(graph.get('nodes', []))} nodes")
 except (json.JSONDecodeError, OSError):
     # Start with an empty graph if the file can't be read
     graph = {'nodes': [], 'edges': []}
+    debug("Starting with a new empty graph")
 
 # Track nodes and edges so we don't insert duplicates
 existing_node_ids = {n['id'] for n in graph['nodes']}
@@ -39,6 +50,7 @@ def log_error(url, resp):
 
 def fetch_candidates():
     """Fetch candidate nodes from the FEC API."""
+    print("Fetching candidate data...")
     for year in (2020, 2024):
         page = 1
         more = True
@@ -50,6 +62,7 @@ def fetch_candidates():
                 'page': page,
             }
             url = CANDIDATE_ENDPOINT + '?' + urlencode(params)
+            debug(f"Requesting candidate page {page} for {year}")
             resp = requests.get(url)
             retry = 0
             # Retry when the API rate limits the request
@@ -62,6 +75,7 @@ def fetch_candidates():
                 break
             try:
                 data = resp.json()
+                debug(f"Received {len(data.get('results', []))} candidate records")
             except json.JSONDecodeError:
                 print(f"Invalid JSON from {url}")
                 break
@@ -85,10 +99,13 @@ def fetch_candidates():
             pages = data.get('pagination', {}).get('pages', 1)
             page += 1
             more = page <= pages
+            # Show progress for candidate requests
+            print(f"  Candidates {year}: completed page {page - 1}/{pages}")
 
 
 def fetch_committees():
     """Fetch committee nodes and edges to candidates."""
+    print("Fetching committee data...")
     for cycle in (2020, 2024):
         page = 1
         more = True
@@ -100,6 +117,7 @@ def fetch_committees():
                 'page': page,
             }
             url = COMMITTEE_ENDPOINT + '?' + urlencode(params)
+            debug(f"Requesting committee page {page} for {cycle}")
             resp = requests.get(url)
             retry = 0
             # Retry if the API rate limit is hit
@@ -112,6 +130,7 @@ def fetch_committees():
                 break
             try:
                 data = resp.json()
+                debug(f"Received {len(data.get('results', []))} committee records")
             except json.JSONDecodeError:
                 print(f"Invalid JSON from {url}")
                 break
@@ -150,6 +169,8 @@ def fetch_committees():
             pages = data.get('pagination', {}).get('pages', 1)
             page += 1
             more = page <= pages
+            # Show progress for committee requests
+            print(f"  Committees {cycle}: completed page {page - 1}/{pages}")
 
 
 def make_contrib_id(item):
@@ -167,6 +188,7 @@ def make_contrib_id(item):
 
 def fetch_contributions():
     """Fetch individual contributions and create edges."""
+    print("Fetching contribution data...")
     for period in (2020, 2024):
         page = 1
         more = True
@@ -180,6 +202,7 @@ def fetch_contributions():
                 'contributor_employer': 'jeffco',
             }
             url = CONTRIBUTION_ENDPOINT + '?' + urlencode(params)
+            debug(f"Requesting contribution page {page} for {period}")
             resp = requests.get(url)
             retry = 0
             # Retry the request if we hit the rate limit
@@ -192,6 +215,7 @@ def fetch_contributions():
                 break
             try:
                 data = resp.json()
+                debug(f"Received {len(data.get('results', []))} contribution records")
             except json.JSONDecodeError:
                 print(f"Invalid JSON from {url}")
                 break
@@ -239,6 +263,8 @@ def fetch_contributions():
             pages = data.get('pagination', {}).get('pages', 1)
             page += 1
             more = page <= pages
+            # Show progress for contribution requests
+            print(f"  Contributions {period}: completed page {page - 1}/{pages}")
 
 
 fetch_candidates()
@@ -248,5 +274,6 @@ fetch_contributions()
 # Persist the augmented graph back to disk
 with open(GRAPH_JSON_PATH, 'w') as f:
     json.dump(graph, f, indent=2)
+    debug("Graph written to disk")
 
 print("Graph updated with FEC data from all sources.")
