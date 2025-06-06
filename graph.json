@@ -1922,6 +1922,113 @@
           "value": "ENGINEER"
         }
       ]
+    },
+    {
+      "id": "committee_C00718866",
+      "label": "JON OSSOFF FOR SENATE",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00718866"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00423228",
+      "label": "AMERICAN GASTROENTEROLOGICAL ASSOCIATION INC. PAC",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00423228"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00608695",
+      "label": "MIKE JOHNSON FOR LOUISIANA",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00608695"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00014498",
+      "label": "REPUBLICAN PARTY OF IOWA",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00014498"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00266585",
+      "label": "GREENBERG TRAURIG, P.A. PAC",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00266585"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00003418",
+      "label": "REPUBLICAN NATIONAL COMMITTEE",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00003418"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00019331",
+      "label": "DEMOCRATIC PARTY OF WISCONSIN FEDERAL",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00019331"
+        }
+      ]
+    },
+    {
+      "id": "committee_C00744946",
+      "label": "HARRIS VICTORY FUND",
+      "type": "Campaign",
+      "attributes": [
+        {
+          "key": "committee_id",
+          "value": "C00744946"
+        }
+      ]
+    },
+    {
+      "id": "individual_MAYER,_DONALD",
+      "label": "MAYER, DONALD",
+      "type": "Individual",
+      "attributes": [
+        {
+          "key": "city",
+          "value": "CRESTED BUTTE"
+        },
+        {
+          "key": "employer",
+          "value": "STEPPING STONES CHILDREN'S CENTER"
+        },
+        {
+          "key": "occupation",
+          "value": "TEACHER"
+        }
+      ]
     }
   ],
   "edges": [
@@ -3454,6 +3561,1542 @@
         {
           "key": "amount",
           "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KEMM,_JOHN_A.",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HAUGE,_WADE",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 5.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HOFFMAN,_RICHARD",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_EVANS,_CAROL_A.",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 35.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_UNDERHILL,_JOANNE",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 60.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ZINGELMAN,_DONNA",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HALCOMB,_CATHERINE",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_PILKENTON,_WILLIAM",
+      "target": "committee_C00718866",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MANN,_KENDELL_L.",
+      "target": "committee_C00423228",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 250.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LONG,_LAURIE",
+      "target": "committee_C00608695",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 52.05
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_JOHNSON,_KAY_M._MRS.",
+      "target": "committee_C00608695",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 20.24
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HARMAN,_HELEN",
+      "target": "committee_C00608695",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": -20.04
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HALLOWITZ,_ROBERT",
+      "target": "committee_C00608695",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": -0.25
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MCCUTCHEN,_WILLIAM",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 0.95
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_WEST,_WILLIAM",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 19.24
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KUNIANSKY,_LAURA",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 4.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KING,_DEANNA",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 1.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LIVINGSTON,_VICTORIA",
+      "target": "committee_C00014498",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 0.95
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KELLEY,_KEVIN",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 249.99
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_AUSTIN,_ANDREA",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 93.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SMITH,_SKIP",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 93.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BARR,_ANDREW",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 93.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_WELLS,_MARTINE",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 187.5
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_DUFFY,_BRIAN",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 272.76
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_PALMER,_DAVID",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 272.76
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_OBERFELD,_NEIL",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 750.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_EID,_TROY_A",
+      "target": "committee_C00266585",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 2000.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_STEWART,_CHARMAINE_MRS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 26.03
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SACCANY,_RICHARD_MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_RUSH,_WILLIAM_H._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 30.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_OLIVETT,_SHAWN",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 24.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_NEWBOLD,_LYNN",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 9.5
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MACKEY,_JUDITH_R.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KUDELKA,_DIANNA_MRS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HALE,_JAMES_D._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ENSIGN,_WILL",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 104.1
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_CROSSLEY,_LINDA_L._MS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 11.75
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BUDREAU,_GORDON_M._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BIDDISON,_MARK",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 2.5
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BAGLEY,_ROBERT",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 45.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SHERRON,_ALICE",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ROBINSON,_LISA_W._MRS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_NAGEL,_RALPH_J._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 1000.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MONTEZON,_JOAN",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 35.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_JACOBS,_RAYMOND_G.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 220.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_JACOBSON,_MERRILL_REX_MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 35.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HUGH,_GARY_D._MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HOLLAND,_JOHANNA_B._MS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_FENWICK,_EDWIN_A.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 200.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_EARLEY,_STEVE_MR.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 35.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_CURE,_MICHELLE_L._MS.",
+      "target": "committee_C00003418",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_PICKHARDT,_JULIE",
+      "target": "committee_C00019331",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_APPELBAUM,_LAURA",
+      "target": "committee_C00019331",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MACRAE,_ELLEN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_GRAINGER,_CINDY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 5.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KRESTAN,_SANDY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 6.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LAWRENCE,_NANCY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 15.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BEARD,_BRIAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_CHADWICK,_ANGELA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_DUKE,_BRIAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MCDERMOTT,_DENNIS",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_FELLOWS,_MICHAEL",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_POINSATTE,_FRANCOISE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 75.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ROZAKLIS,_LOUIS",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SMITH-STILLSON,_KATHY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ANAYA,_STEPHEN_JAMES",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_NIELSEN,_JOYCE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_TIHONOVICH,_DEBBIE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_WARD,_SEAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_COLE,_LAURIE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SAULL,_DAVID",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 20.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BARTON,_MARY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_THISTLETHWAITE,_SUSAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 100.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LILLICH,_MONICA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_ROSAS_GONZALEZ,_MARIA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_NICHOLS,_PAMELA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_GARDNER,_CASEY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MARICLE,_PAUL",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KNEZEVICH,_VALENTINE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_DEWITT,_KATE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 20.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_LOCKWOOD,_PAMELA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 50.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HYUN,_TONY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 12.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_BLOXOM,_AMANDA",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_TUREK,_MELODYE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 6.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_CAYLOR,_VIVIAN",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_QUINLAN,_DANIEL",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_KING,_PATRICK",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HARRIS,_MARY",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SILVER,_ANNE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 1000.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_WOULLARD,_ADAM",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 5.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_SPRACKLEN,_TANNER",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 34.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_FOUST,_SCOTT",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_DAVIS_ALPERT,_LAUREL",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 47.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_HAMMES,_DEBBIE",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 25.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_STETZ,_MARK",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 46.0
+        },
+        {
+          "key": "date",
+          "value": "2024-12-31"
+        }
+      ]
+    },
+    {
+      "source": "individual_MAYER,_DONALD",
+      "target": "committee_C00744946",
+      "label": "contributed_to",
+      "type": "Contribution",
+      "attributes": [
+        {
+          "key": "amount",
+          "value": 10.0
         },
         {
           "key": "date",
