@@ -24,6 +24,7 @@
   </div>
   <div id="cy"></div>  <script>
     let cy, currentNodeId, ring1, ring2, ring3, visibleRing3;
+    let startId;
     let radius1 = 200, radius2 = 500, radius3 = 800;
 
     function getBestPrimary(node, primaryIds) {
@@ -213,15 +214,18 @@ if (depth === 1) ring2.addClass('hidden');
 
     function resetView() {
       if (!cy) return;
-      const defaultNode = cy.getElementById('individual_0');
-      if (defaultNode && defaultNode.length > 0) {
-        highlightNode(defaultNode);
+      if (startId) {
+        const defaultNode = cy.getElementById(startId);
+        if (defaultNode && defaultNode.length > 0) {
+          highlightNode(defaultNode);
+        }
       }
     }
 
     fetch('graph.json')
       .then(res => res.json())
       .then(graphData => {
+        startId = graphData.nodes[0]?.id;
         cy = cytoscape({
           container: document.getElementById('cy'),
           elements: [...graphData.nodes, ...graphData.edges],
@@ -297,10 +301,12 @@ if (depth === 1) ring2.addClass('hidden');
   highlightNode(node);
 });
 
-cy.ready(() => {
-          const defaultNode = cy.getElementById('individual_0');
-          if (defaultNode && defaultNode.length > 0) {
-            highlightNode(defaultNode);
+  cy.ready(() => {
+          if (startId) {
+            const defaultNode = cy.getElementById(startId);
+            if (defaultNode && defaultNode.length > 0) {
+              highlightNode(defaultNode);
+            }
           }
         });
       });
