@@ -38,16 +38,17 @@ existing_node_ids = {n['id'] for n in graph['nodes']}
 existing_edges = {(e['source'], e['target'], e['label']) for e in graph['edges']}
 
 
-def download_file(url: str, dest: str) -> None:
+def download_file(url: str, dest: str) -> bool:
     """Download a remote file to the local filesystem."""
     # Simple wrapper over requests.get for CSV downloads
     debug(f"Downloading {url} -> {dest}")
     resp = requests.get(url, verify=VERIFY_SSL)
     if resp.status_code != 200:
         print(f"Error {resp.status_code} fetching {url}")
-        return
+        return False
     with open(dest, 'wb') as f:
         f.write(resp.content)
+    return True
 
 
 def make_contrib_id(name: str, addr: str) -> str:
@@ -153,14 +154,17 @@ CANDIDATE_FILE = 'tracer_data/candidates.csv'
 COMMITTEE_FILE = 'tracer_data/committees.csv'
 CONTRIBUTION_FILE = 'tracer_data/contributions.csv'
 
-download_file(CANDIDATE_URL, CANDIDATE_FILE)
-download_file(COMMITTEE_URL, COMMITTEE_FILE)
-download_file(CONTRIBUTION_URL, CONTRIBUTION_FILE)
+dl_candidates = download_file(CANDIDATE_URL, CANDIDATE_FILE)
+dl_committees = download_file(COMMITTEE_URL, COMMITTEE_FILE)
+dl_contribs = download_file(CONTRIBUTION_URL, CONTRIBUTION_FILE)
 
 # Process downloaded data
-process_candidates(CANDIDATE_FILE)
-process_committees(COMMITTEE_FILE)
-process_contributions(CONTRIBUTION_FILE)
+if dl_candidates:
+    process_candidates(CANDIDATE_FILE)
+if dl_committees:
+    process_committees(COMMITTEE_FILE)
+if dl_contribs:
+    process_contributions(CONTRIBUTION_FILE)
 
 # Save updated graph
 with open(GRAPH_JSON_PATH, 'w') as f:
