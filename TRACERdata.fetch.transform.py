@@ -6,6 +6,8 @@ import requests
 
 # Enable debug logging when the DEBUG env var is set
 DEBUG = os.getenv('DEBUG', '1') == '1'
+# Toggle SSL certificate verification with VERIFY_SSL env var
+VERIFY_SSL = os.getenv('VERIFY_SSL', '1') == '1'
 
 TRACER_BASE_URL = 'https://tracer.sos.colorado.gov/PublicSite/Download.aspx'
 # CSV export endpoints for each entity type
@@ -40,7 +42,7 @@ def download_file(url: str, dest: str) -> None:
     """Download a remote file to the local filesystem."""
     # Simple wrapper over requests.get for CSV downloads
     debug(f"Downloading {url} -> {dest}")
-    resp = requests.get(url)
+    resp = requests.get(url, verify=VERIFY_SSL)
     if resp.status_code != 200:
         print(f"Error {resp.status_code} fetching {url}")
         return

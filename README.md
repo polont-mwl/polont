@@ -29,3 +29,6 @@ This script downloads the public TRACER CSV files, parses them and appends them 
 API calls are retried automatically when rate limited. The tool waits up to three
 times for 60 seconds each and then performs one final retry after waiting an
 hour before giving up.
+
+If you see SSL certificate errors when fetching TRACER data,
+set the environment variable `VERIFY_SSL=0` to skip the check.
