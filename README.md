@@ -28,6 +28,7 @@ This script downloads the public TRACER contribution CSV, parses it and appends
 the data to the same `graph.json` file. The default URL fetches the latest cycle,
 but you can set the `YEAR` environment variable to download a different election
 year back to 2020. The download is zipped and the script extracts the CSV automatically.
+The CSV is encoded with Windows-1252, which the script reads automatically.
 
 API calls are retried automatically when rate limited. The tool waits up to three
 times for 60 seconds each and then performs one final retry after waiting an
