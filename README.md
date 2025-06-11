@@ -24,7 +24,10 @@ To ingest Colorado TRACER data run:
 python3 TRACERdata.fetch.transform.py
 ```
 
-This script downloads the public TRACER CSV files, parses them and appends them to the same `graph.json` file.
+This script downloads the public TRACER contribution CSV, parses it and appends
+the data to the same `graph.json` file. The default URL fetches the latest cycle,
+but you can set the `YEAR` environment variable to download a different election
+year back to 2020. The download is zipped and the script extracts the CSV automatically.
 
 API calls are retried automatically when rate limited. The tool waits up to three
 times for 60 seconds each and then performs one final retry after waiting an
