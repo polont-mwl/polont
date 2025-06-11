@@ -18,7 +18,10 @@ YEAR = os.getenv('YEAR', '2025')
 # Download path for the yearly contributions dataset
 CONTRIBUTION_URL = f'{TRACER_BASE_URL}/{YEAR}_ContributionData.csv.zip'
 
-GRAPH_JSON_PATH = 'graph.json'
+# Graph file stored relative to this script
+GRAPH_JSON_PATH = os.path.join(os.path.dirname(__file__), 'TRACERgraph.json')
+# Separate file to confirm writes succeed
+DEBUG_JSON_PATH = os.path.join(os.path.dirname(__file__), 'graph_debug.json')
 
 
 def debug(msg: str) -> None:
@@ -29,10 +32,15 @@ def debug(msg: str) -> None:
 
 # Load existing graph or create a new one
 try:
-    with open(GRAPH_JSON_PATH, 'r') as f:
-        graph = json.load(f)
-        debug(f"Loaded graph with {len(graph.get('nodes', []))} nodes")
+    # Ensure file exists and is not empty before loading
+    if os.path.exists(GRAPH_JSON_PATH) and os.path.getsize(GRAPH_JSON_PATH) > 0:
+        with open(GRAPH_JSON_PATH, 'r') as f:
+            graph = json.load(f)
+            debug(f"Loaded graph with {len(graph.get('nodes', []))} nodes")
+    else:
+        raise OSError
 except (json.JSONDecodeError, OSError):
+    # Start with empty structure when file is missing or invalid
     graph = {'nodes': [], 'edges': []}
     debug('Starting new graph')
 
@@ -131,9 +139,12 @@ download_file(CONTRIBUTION_URL, CONTRIBUTION_FILE)
 # Process downloaded data
 process_contributions(CONTRIBUTION_FILE)
 
-# Save updated graph
+# Save updated graph and debug copy
 with open(GRAPH_JSON_PATH, 'w') as f:
     json.dump(graph, f, indent=2)
     debug('Graph updated with TRACER data')
+with open(DEBUG_JSON_PATH, 'w') as f:
+    json.dump(graph, f, indent=2)
+    debug('Debug graph written')
 
 print('Graph updated with TRACER contribution data.')

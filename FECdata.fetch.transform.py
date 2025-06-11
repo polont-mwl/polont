@@ -27,13 +27,20 @@ RETRY_WAIT_SHORT = 60        # wait 60 seconds on first few retries
 RETRY_WAIT_LONG = 60 * 60    # wait 60 minutes on the final retry
 MAX_SHORT_RETRIES = 3        # number of short retries
 
-GRAPH_JSON_PATH = 'graph.json'
+# Graph file stored relative to this script
+GRAPH_JSON_PATH = os.path.join(os.path.dirname(__file__), 'FECgraph.json')
+# Separate file to confirm writes succeed
+DEBUG_JSON_PATH = os.path.join(os.path.dirname(__file__), 'graph_debug.json')
 
 # Attempt to load an existing graph file
 try:
-    with open(GRAPH_JSON_PATH, 'r') as f:
-        graph = json.load(f)
-        debug(f"Loaded graph with {len(graph.get('nodes', []))} nodes")
+    # Only load when the file exists and has content
+    if os.path.exists(GRAPH_JSON_PATH) and os.path.getsize(GRAPH_JSON_PATH) > 0:
+        with open(GRAPH_JSON_PATH, 'r') as f:
+            graph = json.load(f)
+            debug(f"Loaded graph with {len(graph.get('nodes', []))} nodes")
+    else:
+        raise OSError
 except (json.JSONDecodeError, OSError):
     # Start with an empty graph if the file can't be read
     graph = {'nodes': [], 'edges': []}
@@ -272,9 +279,12 @@ fetch_candidates()
 fetch_committees()
 fetch_contributions()
 
-# Persist the augmented graph back to disk
+# Persist the augmented graph back to disk and debug file
 with open(GRAPH_JSON_PATH, 'w') as f:
     json.dump(graph, f, indent=2)
     debug("Graph written to disk")
+with open(DEBUG_JSON_PATH, 'w') as f:
+    json.dump(graph, f, indent=2)
+    debug("Debug graph written")
 
 print("Graph updated with FEC data from all sources.")
