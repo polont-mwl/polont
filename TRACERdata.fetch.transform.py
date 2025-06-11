@@ -72,7 +72,8 @@ def process_contributions(path: str) -> None:
     """Read individual contributions and create edges."""
     # Link contributor nodes to the committees they support
     debug(f"Processing contributions from {path}")
-    with open(path, newline='', encoding='utf-8-sig') as csvfile:
+    # Use Windows-1252 to handle smart quotes and other non-UTF-8 chars
+    with open(path, newline='', encoding='cp1252') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             name = row.get('ContributorName') or row.get('contributor_name')
